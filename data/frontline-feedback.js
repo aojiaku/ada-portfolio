@@ -1,0 +1,58 @@
+const FRONTLINE_FEEDBACK = {
+  meta: {
+    wave1Label: "Baseline",
+    wave2Label: "90-Day Follow-Up",
+    wave1N: 64,
+    wave2N: 71,
+  },
+  themes: [
+    {
+      key: "tooling",
+      label: "Tooling & Systems",
+      wave1Score: 3.0,
+      wave2Score: 3.4,
+      wave1Quotes: ["I spend half my day fighting the tools instead of doing the actual work."],
+      wave2Quotes: ["Small things got fixed and it actually helped. Re-typing IDs used to be constant."],
+    },
+    {
+      key: "workload",
+      label: "Workload & Pace",
+      wave1Score: 3.1,
+      wave2Score: 2.9,
+      wave1Quotes: ["Volume keeps going up but headcount doesn't."],
+      wave2Quotes: ["It's still a lot. Some weeks feel unsustainable."],
+    },
+    {
+      key: "training",
+      label: "Training & Onboarding",
+      wave1Score: 3.5,
+      wave2Score: 3.5,
+      wave1Quotes: ["I learned most of what I know from a teammate, not the official training."],
+      wave2Quotes: ["Onboarding docs still don't match what we actually do day to day."],
+    },
+    {
+      key: "heard",
+      label: "Being Heard / Feedback Loop",
+      wave1Score: 2.8,
+      wave2Score: 3.6,
+      wave1Quotes: ["I've flagged the same bug three times and nothing happens."],
+      wave2Quotes: ["I actually saw something I reported get fixed this quarter. That's new."],
+    },
+    {
+      key: "recognition",
+      label: "Recognition",
+      wave1Score: 3.3,
+      wave2Score: 3.0,
+      wave1Quotes: ["Nobody outside the team really knows what we deal with."],
+      wave2Quotes: ["Feels like less recognition lately, even with the fixes."],
+    },
+    {
+      key: "growth",
+      label: "Career Growth",
+      wave1Score: 2.7,
+      wave2Score: 2.8,
+      wave1Quotes: ["There's no clear path from here to somewhere else."],
+      wave2Quotes: ["Still true. I don't see a path forward from this role."],
+    },
+  ],
+};

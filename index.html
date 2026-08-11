@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ada Johnson: Product Strategy & Operations Leader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="hero">
+  <h1>Ada Johnson</h1>
+  <p class="role-tag">Product Strategy & Operations Leader</p>
+  <p class="tagline">I build AI-enabled systems that turn messy problems into clear decisions.</p>
+  <p class="meta-line">
+    The first four sections come from real systems I've built inside Airbnb's Trust and Safety team: a way to
+    track frontline feedback, a health dashboard for team performance, a workload planning tool, and a small AI
+    experiment. To protect real company data, everything you see there uses made-up numbers and names. The last
+    two sections are real: recognition from managers and peers, and the throughline across my whole career.
+  </p>
+</div>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-panel="problem-library"><span class="tab-num">1</span>Problem Library</button>
+  <button class="tab-btn" data-panel="queue-health"><span class="tab-num">2</span>Queue Health</button>
+  <button class="tab-btn" data-panel="capacity-model"><span class="tab-num">3</span>Capacity Model</button>
+  <button class="tab-btn" data-panel="frontline-chat"><span class="tab-num">4</span>Feedback Chat</button>
+  <button class="tab-btn" data-panel="recognition"><span class="tab-num">5</span>Recognition</button>
+  <button class="tab-btn" data-panel="career"><span class="tab-num">6</span>Career Arc</button>
+</nav>
+
+<main>
+
+  <!-- ============ PANEL 1: PROBLEM LIBRARY ============ -->
+  <section class="panel active" id="panel-problem-library">
+    <div class="panel-intro">
+      <span class="label">Messy Feedback → Clear Priorities</span>
+      <h2>The Problem Library</h2>
+      <p class="problem">
+        Every day, frontline employees were spotting real problems: bugs, gaps, patterns worth flagging. But that
+        feedback was scattered across emails, chats, and forms, with no way to tell a problem that kept coming up
+        from a one-time complaint. This tool turns over 1,600 individual reports into a clear, organized list that
+        leaders can actually act on. You can also ask it questions directly, instead of digging through a spreadsheet.
+      </p>
+      <p class="hint">Click any row below to see what someone actually said.</p>
+    </div>
+    <div class="disclaimer">Quick note: the team names, quotes, and problem titles below are made up to protect real company data. The structure and scale match a real system I built and run.</div>
+
+    <div class="stat-row" id="pl-stats"></div>
+
+    <div class="filter-row">
+      <select id="pl-filter-severity">
+        <option value="">All priority levels</option>
+        <option value="P0">Urgent only</option>
+        <option value="P1">Important only</option>
+        <option value="P2">Minor only</option>
+      </select>
+      <select id="pl-filter-domain">
+        <option value="">All teams</option>
+      </select>
+      <button class="chip-toggle" id="pl-filter-cross">Spans multiple teams</button>
+      <button class="chip-toggle" id="pl-filter-quickwin">Already fixed</button>
+      <span class="count-note" id="pl-count-note"></span>
+    </div>
+
+    <div class="cluster-list" id="pl-cluster-list"></div>
+
+    <div class="qa-box">
+      <h3>Ask About These Problems</h3>
+      <p class="qa-sub">
+        This isn't a live AI chatbot. It's a simple tool that reads your question and finds the answer in the data
+        above. It works a lot like how I actually use AI at work: AI helps me find patterns fast, but a person
+        still decides what actually counts as a problem.
+      </p>
+      <div class="qa-suggestions" id="pl-qa-suggestions"></div>
+      <div class="qa-input-row">
+        <input type="text" id="pl-qa-input" placeholder="Type a question, or tap one above" />
+        <button id="pl-qa-submit">Ask</button>
+      </div>
+      <div class="qa-answer" id="pl-qa-answer" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- ============ PANEL 2: QUEUE HEALTH MONITOR ============ -->
+  <section class="panel" id="panel-queue-health">
+    <div class="panel-intro">
+      <span class="label">How Much → How Fast → How Well</span>
+      <h2>Queue Health Monitor</h2>
+      <p class="problem">
+        Leaders had plenty of data, but no single place to see how any team was actually doing. Case volume,
+        on-time rates, quality scores, and speed all lived in different tools, so a 70-slide weekly meeting could
+        explain <em>what</em> happened but rarely <em>why</em>. This puts every team on the same three simple
+        measures: how much work is coming in, how fast it's handled, and how well it's done.
+      </p>
+      <p class="hint">Click a team card to see its 8-week trend and what's actually going on behind it.</p>
+    </div>
+    <div class="disclaimer">Quick note: team names and numbers below are made up. The 3-part framework behind it (how much, how fast, how well) matches a real system I built and run.</div>
+
+    <div class="stat-row" id="qh-stats"></div>
+
+    <div class="qh-grid" id="qh-cards"></div>
+
+    <div class="qh-detail">
+      <div class="qh-detail-header">
+        <h3 id="qh-detail-title">Identity Verification: 8-week trend</h3>
+        <div class="qh-metric-tabs" id="qh-metric-tabs"></div>
+      </div>
+      <div class="qh-goal-note" id="qh-goal-note"></div>
+      <div class="qh-chart-wrap" id="qh-chart-wrap"></div>
+      <div class="qh-legend-note" id="qh-legend-note"></div>
+
+      <div class="qh-signals">
+        <div class="qh-signals-title">What's Behind the Number</div>
+        <div class="qh-signals-sub">This is the real differentiator: instead of just a metric, everything that explains it lives in one place, launches, bugs, known issues, and fixes already shipped.</div>
+        <div id="qh-signals-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PANEL 3: CAPACITY MODEL ============ -->
+  <section class="panel" id="panel-capacity-model">
+    <div class="panel-intro">
+      <span class="label">Team Size → Workload → Priorities → Capacity</span>
+      <h2>Capacity Model</h2>
+      <p class="problem">
+        My team juggled four different kinds of work at the same time: regular reporting meetings, big strategic
+        projects, everyday casework, and last-minute fires to put out. I could explain any single project, but not
+        our total workload or where the real tradeoffs were. This tool connects team size and workload to what's
+        actually needed in each area, so a conversation about priorities can start with real numbers instead of a
+        gut feeling.
+      </p>
+      <p class="hint">Drag any slider below and watch the numbers update.</p>
+    </div>
+    <div class="disclaimer">Quick note: the category names and hours below are made up. The idea behind it, team size and hours compared to what each area actually needs, matches a real planning tool I built and use.</div>
+
+    <div class="cm-layout">
+      <div class="cm-controls">
+        <div class="slider-group">
+          <label>Team size <span class="slider-val" id="cm-headcount-val"></span></label>
+          <input type="range" id="cm-headcount" />
+        </div>
+        <div class="slider-group">
+          <label>Hours per person, per week <span class="slider-val" id="cm-hours-val"></span></label>
+          <input type="range" id="cm-hours" />
+        </div>
+        <div class="slider-group">
+          <label>Growth in workload <span class="slider-val" id="cm-demand-val"></span></label>
+          <input type="range" id="cm-demand" />
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:18px 0;" />
+        <div class="label" style="margin-bottom:10px;">Where the team's time goes</div>
+        <div id="cm-allocation-sliders"></div>
+        <div class="cm-alloc-sum" id="cm-alloc-sum"></div>
+      </div>
+
+      <div class="cm-results">
+        <div class="stat-row" id="cm-stats"></div>
+        <div class="cluster-list" id="cm-category-list"></div>
+      </div>
+    </div>
+
+    <div class="cm-asana">
+      <div class="cm-asana-title">Where These Numbers Actually Come From</div>
+      <div class="cm-asana-sub">Every week, the team logs real tasks in Asana and tags each one by category. Add up the tags, and you get the hours you see above. Here's a sample of what that looks like.</div>
+      <div id="cm-asana-list"></div>
+    </div>
+  </section>
+
+  <!-- ============ PANEL 4: FRONTLINE FEEDBACK CHAT ============ -->
+  <section class="panel" id="panel-frontline-chat">
+    <div class="panel-intro">
+      <span class="label">AI Experiment</span>
+      <h2>What if frontline feedback could talk back?</h2>
+      <p class="problem">
+        Most teams run employee surveys the same way: one check-in, a follow-up a few months later, then a slide
+        full of numbers. This is a small experiment in doing it differently. Instead of reading a summary slide,
+        you can ask the data questions directly and get answers based on real themes and quotes.
+      </p>
+      <p class="hint">Type a question below, or tap one to get started.</p>
+    </div>
+    <div class="disclaimer">Quick note: the themes, scores, and quotes below are made up. The structure, one survey and a 90-day follow-up, matches a real survey I designed and ran.</div>
+
+    <div class="stat-row" id="ff-stats"></div>
+
+    <div class="chat-window" id="ff-chat-window"></div>
+    <div class="qa-suggestions" id="ff-suggestions"></div>
+    <div class="qa-input-row">
+      <input type="text" id="ff-input" placeholder="Ask something, or tap a question above" />
+      <button id="ff-send">Send</button>
+    </div>
+  </section>
+
+
+  <section class="panel" id="panel-recognition">
+    <div class="panel-intro">
+      <span class="label">What People Say</span>
+      <h2>Recognition</h2>
+      <p class="problem">
+        Almost two decades of feedback, from an internship in college to Airbnb today, and the same handful of
+        themes keep showing up. This includes performance reviews at Google and Airbnb, plus public
+        recommendations from colleagues at Target, Best Buy, and earlier in my career.
+      </p>
+    </div>
+    <div class="disclaimer">Quick note: every quote below, from internal performance reviews and from public LinkedIn recommendations alike, has real names replaced with roles (Manager, Peer, Direct Report) to keep the focus on the work, not the individuals.</div>
+
+    <div class="tldr-title">Patterns That Keep Showing Up</div>
+    <div class="tldr-sub">Different roles, different companies, decades apart, and the same themes keep surfacing.</div>
+    <div class="superpower-grid" id="recognition-superpowers"></div>
+
+    <div class="recognition-highlights-title">All the Feedback</div>
+    <div class="filter-row" id="recognition-company-filter">
+      <button class="chip-toggle active" data-company="all">All</button>
+      <button class="chip-toggle" data-company="Google">Google (2016-2022)</button>
+      <button class="chip-toggle" data-company="Airbnb">Airbnb (2023-2026)</button>
+      <button class="chip-toggle" data-company="other">Other Career &amp; School</button>
+    </div>
+
+    <div class="quote-grid" id="recognition-quotes"></div>
+
+    <div class="recognition-highlights-title">Recognized Impact at Other Companies</div>
+    <div class="highlight-grid" id="recognition-highlights"></div>
+  </section>
+
+  <section class="panel" id="panel-career">
+    <div class="panel-intro">
+      <span class="label">The Throughline</span>
+      <h2>Career Arc</h2>
+      <p class="problem">
+        Three chapters, one throughline: staying close to the signal that most companies overlook, then building
+        the structure to turn it into action.
+      </p>
+    </div>
+    <div class="career-narrative" id="career-narrative"></div>
+    <div id="career-chapters"></div>
+  </section>
+</main>
+
+<footer>Built by Ada Johnson. Every dataset on this site is made up or fictionalized for demonstration purposes.</footer>
+
+<script src="data/problem-library.js"></script>
+<script src="data/queue-health.js"></script>
+<script src="data/capacity-model.js"></script>
+<script src="data/frontline-feedback.js"></script>
+<script src="data/recognition.js"></script>
+<script src="data/career.js"></script>
+<script src="js/main.js"></script>
+<script src="js/problem-library.js"></script>
+<script src="js/queue-health.js"></script>
+<script src="js/capacity-model.js"></script>
+<script src="js/frontline-feedback.js"></script>
+<script src="js/recognition.js"></script>
+<script src="js/career.js"></script>
+</body>
+</html>

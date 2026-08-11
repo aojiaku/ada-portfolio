@@ -1,0 +1,46 @@
+const CAPACITY_MODEL = {
+  defaults: { headcount: 7, hoursPerWeek: 39, demandGrowthPct: 0 },
+  ranges: {
+    headcount: { min: 3, max: 15, step: 1 },
+    hoursPerWeek: { min: 30, max: 45, step: 1 },
+    demandGrowthPct: { min: -20, max: 50, step: 5 },
+  },
+  categories: [
+    {
+      key: "cadence",
+      label: "Regular Reporting & Meetings",
+      color: "secondary",
+      baseRequiredHrs: 42,
+      scalesWithDemand: 0,
+      defaultAllocationPct: 15,
+      note: "This stays about the same no matter how busy things get.",
+    },
+    {
+      key: "bau",
+      label: "Day-to-Day Casework",
+      color: "primary",
+      baseRequiredHrs: 110,
+      scalesWithDemand: 1.0,
+      defaultAllocationPct: 40,
+      note: "Grows directly with how much work is coming in.",
+    },
+    {
+      key: "strategic",
+      label: "Big Strategic Projects",
+      color: "accent",
+      baseRequiredHrs: 70,
+      scalesWithDemand: 0,
+      defaultAllocationPct: 26,
+      note: "A fixed goal set by leadership, not tied to workload.",
+    },
+    {
+      key: "escalations",
+      label: "Fires to Put Out",
+      color: "critical",
+      baseRequiredHrs: 28,
+      scalesWithDemand: 0.5,
+      defaultAllocationPct: 10,
+      note: "Grows a bit with workload, but spikes are hard to predict.",
+    },
+  ],
+};
