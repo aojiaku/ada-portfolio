@@ -19,7 +19,7 @@ const CAREER = {
       { company:"Google", title:"Manager, Partner Strategy & Operations, Google One", dates:"2019 to 2021", scope:"Scaled distribution partnerships from 2 to 40+ markets and increased subscriptions by 95%." },
     ]},
     { title:"Building Systems That Create Clarity from Complexity", years:"Google Corporate Engineering & Airbnb", theme:"Scaled operating models, platform integrity, and people leadership", color:"accent", roles:[
-      { company:"Google", title:"Principal, Strategy and Product Operations", dates:"2021 to 2023", quote:"Led strategy and transformation initiatives for Google's Technology and Engineering organization, redesigning frontline IT support into a more scalable operating model.", scope:"Built the business case and change strategy that moved an 800+ person frontline support org to a sustainable full-time-employee model." },
+      { company:"Google", title:"Principal, Strategy and Product Operations", dates:"2021 to 2023", scope:"Built the business case and change strategy that moved an 800+ person frontline support org to a sustainable full-time-employee model." },
       { company:"Airbnb", title:"Manager, Product Operations", dates:"2023 to Present", quote:"I build AI-enabled operating systems that help Airbnb's Fraud and Safety teams learn faster, make better product decisions, and scale trust across a global platform.", scope:"Turned 1,500+ frontline signals into a product prioritization system and designed the Queue Health Monitor, a unified operating view across Fraud & Safety." },
     ]},
   ],
