@@ -10,7 +10,7 @@
       </div>`).join("");
   }
   function matchesFilter(q) {
-    if (state.company === "all") return true;
+    if (state.company === "all") return q.featured === true;
     if (state.company === "other") return q.company !== "Google" && q.company !== "Airbnb";
     return q.company === state.company;
   }
