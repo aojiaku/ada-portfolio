@@ -1,4 +1,4 @@
-# Ada Johnson — Product Strategy & Operations Portfolio
+# Ada Johnson | Product Strategy & Operations Portfolio
 
 This is an interactive portfolio I built to show real systems I've designed and run in Trust and Safety operations at Airbnb, along with career recognition and background.
 
