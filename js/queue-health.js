@@ -155,6 +155,18 @@
     return PROBLEM_LIBRARY.clusters.filter((c) => c.domains.includes(queueName));
   }
 
+  function jumpToProblem(clusterId) {
+    const plTabBtn = document.querySelector('.tab-btn[data-panel="problem-library"]');
+    if (plTabBtn) plTabBtn.click();
+    setTimeout(() => {
+      const row = document.querySelector(`.cluster-row[data-id="${clusterId}"]`);
+      if (row) {
+        row.classList.add("expanded");
+        row.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }, 60);
+  }
+
   function renderSignals(q) {
     const related = relatedProblems(q.name);
     const knownIssue = related
@@ -174,7 +186,8 @@
         type: "issue",
         icon: "🔎",
         title: knownIssue.title,
-        meta: `Reported ${knownIssue.count} times, still open, see it in the Problem Library`,
+        meta: `Reported ${knownIssue.count} times, still open — see it in the Problem Library`,
+        clusterId: knownIssue.id,
       });
     }
     if (opportunity) {
@@ -187,18 +200,25 @@
     }
 
     document.getElementById("qh-signals-list").innerHTML = rows
-      .map(
-        (r) => `
-      <div class="qh-signal-row">
+      .map((r) => {
+        const clickable = r.clusterId != null;
+        const rowAttrs = clickable ? ` data-cluster-id="${r.clusterId}" style="cursor:pointer;"` : "";
+        const titleStyle = clickable ? ` style="color:var(--primary); text-decoration:underline;"` : "";
+        return `
+      <div class="qh-signal-row"${rowAttrs}>
         <div class="qh-signal-icon ${r.type}">${r.icon}</div>
         <div>
           <div class="qh-signal-type">${r.type === "issue" ? "Known issue" : r.type === "opportunity" ? "Opportunity, from the feedback loop" : r.type}</div>
-          <div class="qh-signal-title">${r.title}</div>
+          <div class="qh-signal-title"${titleStyle}>${r.title}</div>
           <div class="qh-signal-meta">${r.meta}</div>
         </div>
-      </div>`
-      )
+      </div>`;
+      })
       .join("");
+
+    document.querySelectorAll(".qh-signal-row[data-cluster-id]").forEach((row) => {
+      row.addEventListener("click", () => jumpToProblem(row.dataset.clusterId));
+    });
   }
 
   function renderDetail() {
