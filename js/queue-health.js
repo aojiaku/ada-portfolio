@@ -35,9 +35,9 @@
     const stats = [
       { value: DATA.queues.length, label: "Teams in one view" },
       { value: avgSla.toFixed(1) + "%", label: "Average on-time rate this week (goal: " + DATA.slaTarget + "%)" },
-      { value: belowTarget, label: "Teams missing their on-time goal" },
-      { value: totalVolume.toLocaleString("en-US"), label: "Total cases handled this week" },
-      { value: risingBacklog, label: "Teams with a growing backlog" },
+      { value: belowTarget, label: `Teams missing their on-time goal, out of ${DATA.queues.length} total` },
+      { value: totalVolume.toLocaleString("en-US"), label: `Total cases handled this week, about ${Math.round(totalVolume / DATA.queues.length)} per team` },
+      { value: risingBacklog, label: `Teams with a growing backlog, out of ${DATA.queues.length} total` },
     ];
     document.getElementById("qh-stats").innerHTML = stats
       .map((s) => `<div class="stat-tile"><div class="value">${s.value}</div><div class="label">${s.label}</div></div>`)
