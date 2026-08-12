@@ -190,10 +190,8 @@ a:hover { text-decoration: underline; }
 .build-story {
   max-width: 1240px;
   margin: 0 auto 28px;
-  padding: 24px 26px;
-  background: var(--surface);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  padding: 24px 20px 0;
+  border-top: 2px dashed var(--border);
 }
 .build-story-label {
   font-size: 12px;
@@ -229,9 +227,10 @@ a:hover { text-decoration: underline; }
   gap: 12px;
 }
 .build-step {
-  background: var(--bg);
+  background: var(--surface);
   border-radius: var(--radius-sm);
   padding: 14px 16px;
+  box-shadow: var(--shadow);
 }
 .build-step-num {
   font-size: 11px;
