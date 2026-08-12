@@ -33,10 +33,12 @@
 
   function renderStats() {
     const m = DATA.meta;
+    const avgReportsPerCluster = Math.round(m.totalSubmissions / m.totalClusters);
+    const p0Share = Math.round((m.p0Count / m.totalClusters) * 100);
     const stats = [
-      { value: fmt(m.totalSubmissions) + "+", label: "Reports reviewed" },
-      { value: m.totalClusters, label: "Recurring problems found" },
-      { value: m.p0Count, label: "Most urgent problems" },
+      { value: fmt(m.totalSubmissions) + "+", label: `Reports reviewed, distilled into ${m.totalClusters} patterns` },
+      { value: m.totalClusters, label: `Recurring problems, about ${avgReportsPerCluster} reports each on average` },
+      { value: m.p0Count, label: `Most urgent problems, roughly ${p0Share}% of everything found` },
       { value: m.quickWinsShipped + " / " + m.quickWinsIdentified, label: "Fixes shipped, out of the ones we found" },
       { value: fmt(m.monthlyReworkHours) + "+ hrs/mo", label: "Time wasted on repeat work, every month" },
       { value: m.fraudExposureMonthly, label: "Money at risk each month if left unfixed" },
