@@ -50,7 +50,7 @@ a:hover { text-decoration: underline; }
 
 /* ---- Hero ---- */
 .hero {
-  max-width: 900px;
+  max-width: 1040px;
   margin: 0 auto;
   padding: 48px 24px 16px;
   text-align: center;
@@ -105,7 +105,7 @@ a:hover { text-decoration: underline; }
   margin: 0 auto 14px;
 }
 .philosophy-map {
-  max-width: 980px;
+  max-width: 1200px;
   margin: 0 auto 24px;
   padding: 0 20px;
   display: flex;
@@ -144,7 +144,7 @@ a:hover { text-decoration: underline; }
 
 /* ---- Hero: what's next callout ---- */
 .next-callout {
-  max-width: 640px;
+  max-width: 820px;
   margin: 4px auto 18px;
   text-align: left;
   background: var(--primary-tint);
@@ -180,7 +180,7 @@ a:hover { text-decoration: underline; }
 
 /* ---- How this site was built ---- */
 .build-story {
-  max-width: 1080px;
+  max-width: 1240px;
   margin: 0 auto 28px;
   padding: 24px 26px;
   background: var(--surface);
@@ -306,7 +306,7 @@ a:hover { text-decoration: underline; }
 
 /* ---- Main / panels ---- */
 main {
-  max-width: 1080px;
+  max-width: 1240px;
   margin: 0 auto;
   padding: 32px 20px 80px;
 }
