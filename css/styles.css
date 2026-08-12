@@ -50,13 +50,15 @@ a:hover { text-decoration: underline; }
 
 /* ---- Hero ---- */
 .hero {
-  width: 100%;
-  background: var(--secondary-tint);
+  max-width: 1240px;
+  margin: 28px auto 0;
+  padding: 0 20px;
 }
 .hero-inner {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 48px 24px 32px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 48px 40px 40px;
   text-align: center;
 }
 .hero h1 {
