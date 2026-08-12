@@ -108,7 +108,9 @@ a:hover { text-decoration: underline; }
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  margin: 0 auto 14px;
+  margin: 22px auto 14px;
+  padding-top: 22px;
+  border-top: 2px dashed var(--border);
 }
 .philosophy-map {
   max-width: 1200px;
