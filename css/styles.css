@@ -199,7 +199,10 @@ a:hover { text-decoration: underline; }
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
+}
+.section-divider {
   border-top: 2px dashed var(--border);
+  margin: 8px 0 26px;
 }
 .build-story-label {
   font-size: 12px;
