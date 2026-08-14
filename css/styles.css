@@ -303,7 +303,7 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.55;
-  max-width: 88ch;
+  max-width: none;
   margin: 0 0 10px;
   text-wrap: pretty;
 }
@@ -434,7 +434,7 @@ main {
   color: var(--text-secondary);
   font-size: 15.5px;
   line-height: 1.65;
-  max-width: 76ch;
+  max-width: none;
   text-wrap: pretty;
 }
 .panel-intro .hint {
@@ -460,7 +460,6 @@ main {
   padding: 13px 17px;
   margin-bottom: 24px;
   line-height: 1.55;
-  max-width: 84ch;
 }
 
 /* ---- Stat tiles ---- */
@@ -626,7 +625,7 @@ main {
   margin-top: 30px;
 }
 .qa-box h3 { margin: 0 0 6px; font-size: 19px; font-weight: 600; letter-spacing: -0.015em; }
-.qa-box .qa-sub { font-size: 13.5px; color: var(--text-secondary); margin: 0 0 16px; line-height: 1.6; max-width: 80ch; }
+.qa-box .qa-sub { font-size: 13.5px; color: var(--text-secondary); margin: 0 0 16px; line-height: 1.6; }
 .qa-suggestions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
 .qa-suggestions button {
   font-family: var(--font);
@@ -820,7 +819,7 @@ footer {
   border-top: 1px solid var(--border);
 }
 .qh-signals-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-.qh-signals-sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.55; max-width: 80ch; }
+.qh-signals-sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.55; }
 .qh-signal-row { display: flex; gap: 12px; align-items: flex-start; padding: 11px 0; border-bottom: 1px solid var(--gridline); }
 .qh-signal-row:last-child { border-bottom: none; padding-bottom: 0; }
 .qh-signal-icon {
@@ -909,7 +908,7 @@ footer {
   padding: 24px;
 }
 .cm-asana-title { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
-.cm-asana-sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.55; max-width: 80ch; }
+.cm-asana-sub { font-size: 12.5px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.55; }
 .cm-task-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-bottom: 1px solid var(--gridline); }
 .cm-task-row:last-child { border-bottom: none; padding-bottom: 0; }
 .cm-task-check {
