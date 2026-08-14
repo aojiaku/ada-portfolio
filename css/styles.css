@@ -1026,3 +1026,72 @@ footer {
 .career-role-card .role-scope { font-size:13px; color:var(--text-secondary); line-height:1.55; border-left:2px solid var(--accent); padding-left:11px; }
 .career-role-card .role-quote { font-size:12.5px; font-style:normal; color:var(--text-secondary); border-left:2px solid rgba(107,79,216,0.5); padding-left:11px; line-height:1.55; }
 .career-role-card .role-note { font-family:var(--mono); font-size:10.5px; font-weight:400; color:var(--status-good); line-height:1.45; }
+/* ===== MOBILE RESPONSIVENESS FIXES (added 2026-08-14) =====
+   Audited at 375x812, 390x844, 768x1024, 1440x900 in Chromium via Playwright,
+   checking document.documentElement.scrollWidth vs clientWidth on all 6 tabs,
+   plus a visual pass for clipped/overlapping content and touch target size.
+   Two real bugs were found and are fixed below; everything else audited clean. */
+
+/* ---- FIX 1: Capacity Model "Where These Numbers Actually Come From" task
+   feed (.cm-task-row) caused horizontal page overflow at 375px and 390px
+   (confirmed: documentElement.scrollWidth 400/400 vs clientWidth 375/390).
+   Root cause: .cm-task-tag and .cm-task-hours are white-space:nowrap flex
+   siblings of .cm-task-name (flex:1). Long tag labels like "Regular
+   Reporting & Meetings" can't shrink or wrap, so once check-icon + name's
+   minimum content + nowrap tag + nowrap hours exceed the row's width, the
+   row (and the whole page) overflows horizontally. Not reproducible at
+   768px/1440px because there's enough width for the nowrap tag to fit. */
+@media (max-width: 600px) {
+  .cm-task-row {
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+  .cm-task-check {
+    order: 1;
+  }
+  .cm-task-name {
+    order: 2;
+    flex: 1 1 calc(100% - 26px); /* leave room for the check icon + its gap on line 1 */
+    min-width: 0;
+  }
+  .cm-task-tag {
+    order: 3;
+    white-space: normal;
+    text-align: left;
+  }
+  .cm-task-hours {
+    order: 4;
+    margin-left: auto;
+  }
+}
+
+/* ---- FIX 2: Capacity Model sidebar (.cm-controls) gets hidden underneath
+   the sticky tab bar on narrow screens. .cm-controls uses
+   `position: sticky; top: 76px`, a value tuned for the single-row desktop
+   nav (~63px tall). At 375-390px the 6 tabs wrap onto 3 rows, so #tabs is
+   ~142px tall; once .cm-controls' sticky point engages, its top 66px
+   (142 - 76) render underneath the nav (z-index: 10) and are visually
+   clipped. Confirmed by scrolling the Capacity Model panel at 375/390: the
+   first slider ("Team size") is completely hidden behind the tab bar.
+   Sticky-while-stacked also isn't useful once .cm-layout is a single column
+   (existing breakpoint below, max-width: 800px), so the simplest correct
+   fix is to turn sticky off at the same breakpoint rather than chase the
+   nav's variable wrapped height. */
+@media (max-width: 800px) {
+  .cm-controls {
+    position: static;
+    top: auto;
+  }
+}
+
+/* ---- Minor touch-target improvement: .tab-btn measured ~35px tall, under
+   the ~44px minimum recommended touch target size. Not an overflow bug and
+   not mobile-exclusive (same padding at every breakpoint), but worth
+   tightening up now that the nav is being touched on a phone/thumb rather
+   than clicked with a mouse. Scoped to small screens only so the compact
+   desktop nav is untouched. */
+@media (max-width: 480px) {
+  .tab-btn {
+    padding: 12px 15px;
+  }
+}
