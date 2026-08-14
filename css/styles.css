@@ -988,9 +988,23 @@ footer {
 @media (max-width:540px) { .superpower-grid { grid-template-columns:1fr; } }
 
 /* ---- Career Arc ---- */
-.career-narrative { max-width:76ch; margin-bottom:40px; }
-.career-narrative p { font-size:15.5px; line-height:1.7; color:var(--text-secondary); margin-bottom:16px; text-wrap: pretty; }
-.career-narrative p:first-child { font-weight:500; color:var(--text-primary); font-size:17px; line-height:1.55; }
+.career-narrative {
+  max-width:1140px;
+  margin-bottom:40px;
+  columns:2;
+  column-gap:52px;
+}
+.career-narrative p { font-size:15.5px; line-height:1.7; color:var(--text-secondary); margin:0 0 16px; text-wrap: pretty; break-inside: avoid; }
+.career-narrative p:first-child {
+  column-span:all;
+  font-weight:500;
+  color:var(--text-primary);
+  font-size:19px;
+  line-height:1.5;
+  max-width:86ch;
+  margin-bottom:24px;
+}
+@media (max-width:860px) { .career-narrative { columns:1; } }
 .career-chapter { margin-bottom:40px; }
 .career-chapter-header { border-left:2px solid var(--baseline); padding-left:16px; margin-bottom:18px; }
 .career-chapter-header.primary { border-left-color:var(--primary); }
