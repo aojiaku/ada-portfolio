@@ -1004,18 +1004,6 @@ footer {
   max-width:86ch;
   margin-bottom:24px;
 }
-.career-narrative p:last-child {
-  column-span:all;
-  margin:8px 0 0;
-  padding:20px 22px;
-  background:var(--primary-tint);
-  border:1px solid rgba(107,79,216,0.32);
-  border-radius:var(--radius);
-  color:var(--text-primary);
-  font-size:15px;
-  line-height:1.65;
-  max-width:none;
-}
 @media (max-width:860px) { .career-narrative { columns:1; } }
 .career-chapter { margin-bottom:40px; }
 .career-chapter-header { border-left:2px solid var(--baseline); padding-left:16px; margin-bottom:18px; }
