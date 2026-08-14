@@ -303,13 +303,10 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   font-size: 13.5px;
   color: var(--text-secondary);
   line-height: 1.55;
-  max-width: none;
+  max-width: 88ch;
   margin: 0 0 10px;
   text-wrap: pretty;
-  columns: 2;
-  column-gap: 44px;
 }
-@media (max-width: 860px) { .build-story-body { columns: 1; } }
 .build-phase-label {
   font-size: 10px;
   color: var(--primary-dark);
