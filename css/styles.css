@@ -79,18 +79,18 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
 /* ---- Hero ---- */
 .hero {
   max-width: 1240px;
-  margin: 40px auto 0;
+  margin: 28px auto 0;
   padding: 0 24px;
 }
 .hero-inner {
   background: var(--surface);
   border: var(--card-border);
   border-radius: var(--radius);
-  padding: 52px 44px 44px;
+  padding: 36px 40px 32px;
   text-align: left;
 }
 .hero h1 {
-  font-size: 56px;
+  font-size: 46px;
   font-weight: 600;
   margin: 0;
   letter-spacing: -0.03em;
@@ -103,10 +103,10 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   order: -1;
 }
 .hero .tagline {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--text-primary);
-  margin: 14px 0 22px;
+  margin: 12px 0 18px;
   line-height: 1.35;
   letter-spacing: -0.01em;
   max-width: 26ch;
@@ -123,11 +123,11 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   .hero-grid { grid-template-columns: 1fr; gap: 20px; }
 }
 .hero .about-me {
-  font-size: 15.5px;
+  font-size: 15px;
   color: var(--text-secondary);
   max-width: 74ch;
-  margin: 0 0 16px;
-  line-height: 1.65;
+  margin: 0 0 13px;
+  line-height: 1.6;
   text-wrap: pretty;
 }
 /* ---- Hero: feedback-loop chain ---- */
@@ -161,11 +161,11 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   margin: 6px 0 18px;
 }
 .hero .meta-line {
-  font-size: 13px;
+  font-size: 12.5px;
   color: var(--text-secondary);
   max-width: 82ch;
-  margin: 20px 0 0;
-  line-height: 1.6;
+  margin: 14px 0 0;
+  line-height: 1.55;
   background: #F7F7F4;
   border: 1px solid var(--border);
   border-left: 3px solid var(--secondary);
@@ -182,7 +182,7 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   background: var(--primary-tint);
   border: 1px solid rgba(107,79,216,0.32);
   border-radius: var(--radius);
-  padding: 22px 24px;
+  padding: 20px 22px;
 }
 .next-callout-label {
   display: block;
@@ -210,9 +210,9 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   font-weight: 500;
 }
 .next-callout-body {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
   text-wrap: pretty;
 }
@@ -277,8 +277,8 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
 /* ---- How this site was built ---- */
 .build-story {
   max-width: 1240px;
-  margin: 0 auto 32px;
-  padding: 32px 34px 34px;
+  margin: 0 auto 28px;
+  padding: 24px 28px 26px;
   background: var(--surface);
   border-radius: var(--radius);
   border: var(--card-border);
@@ -294,32 +294,35 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   margin-bottom: 8px;
 }
 .build-story-title {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   letter-spacing: -0.015em;
-  margin: 0 0 12px;
+  margin: 0 0 10px;
 }
 .build-story-body {
-  font-size: 15px;
+  font-size: 13.5px;
   color: var(--text-secondary);
-  line-height: 1.62;
-  max-width: 78ch;
+  line-height: 1.55;
+  max-width: none;
   margin: 0 0 10px;
   text-wrap: pretty;
+  columns: 2;
+  column-gap: 44px;
 }
+@media (max-width: 860px) { .build-story-body { columns: 1; } }
 .build-phase-label {
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--primary-dark);
-  margin: 24px 0 10px;
+  margin: 16px 0 7px;
 }
 .build-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 8px;
   border: 1px solid rgba(107,79,216,0.30);
   background: var(--primary-tint);
-  border-radius: var(--radius);
-  padding: 14px;
+  border-radius: var(--radius-sm);
+  padding: 8px;
 }
 /* second band (automated pipeline) reads teal */
 .build-steps:has(.build-step.automated) {
@@ -329,35 +332,38 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
 .build-step {
   background: var(--surface);
   border: 1px solid rgba(107,79,216,0.22);
-  border-radius: var(--radius-sm);
-  padding: 15px 17px;
+  border-radius: 7px;
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 .build-step.automated { border-color: rgba(47,107,112,0.26); }
 .build-step-num {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 9.5px;
   font-weight: 500;
   color: var(--primary);
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 .build-step.automated .build-step-num { color: var(--secondary); }
 .build-step-title {
-  font-size: 14.5px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-bottom: 0;
 }
 .build-step-desc {
-  font-size: 12.5px;
+  font-size: 11.5px;
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
 }
 .build-source-link {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  margin-top: 22px;
+  margin-top: 16px;
   font-family: var(--mono);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--primary);
   background: none;
