@@ -66,23 +66,24 @@
   <p class="meta-line">
     The first four sections come from real systems I've built inside Airbnb's Trust and Safety team: a way to
     track frontline feedback, a health dashboard for team performance, a workload planning tool, and a small AI
-    experiment. To protect real company data, everything you see there uses made-up numbers and names. The last
-    two sections are real: recognition from managers and peers, and the throughline across my whole career.
+    experiment. The fifth comes from a go-to-market framework I built at Google One. To protect real company and
+    partner data, everything in those five sections uses made-up numbers and names. The last two sections are
+    real: recognition from managers and peers, and the throughline across my whole career.
   </p>
 </div>
 </div>
 
 <div class="build-story" id="cross-career-section">
-  <div class="build-story-label">Beyond Trust &amp; Safety</div>
+  <div class="build-story-label">Track Record</div>
   <h2 class="build-story-title">The same throughline, four different industries</h2>
   <p class="build-story-body">
-    The tools below come from my current chapter at Airbnb. The throughline that got me here, finding signal
-    and turning it into leverage, started long before Trust and Safety was on my resume.
+    The tools above come from my current chapter at Airbnb. The throughline behind all of it, finding signal
+    and turning it into leverage, runs across four industries and twenty years.
   </p>
   <div class="highlight-grid" id="homepage-highlights"></div>
 </div>
 
-<p class="philosophy-lead">Six different proofs of the same operating philosophy</p>
+<p class="philosophy-lead">Seven different proofs of the same operating philosophy</p>
 <div class="philosophy-map">
   <span class="pm-item"><strong>01 Problem Library</strong><span class="pm-tag">understand the problem</span></span>
   <span class="pm-arrow">→</span>
@@ -92,9 +93,11 @@
   <span class="pm-arrow">→</span>
   <span class="pm-item"><strong>04 Feedback Chat</strong><span class="pm-tag">interrogate the signal</span></span>
   <span class="pm-arrow">→</span>
-  <span class="pm-item"><strong>05 Recognition</strong><span class="pm-tag">understand the people</span></span>
+  <span class="pm-item"><strong>05 Partner Launch</strong><span class="pm-tag">scale it, repeatably</span></span>
   <span class="pm-arrow">→</span>
-  <span class="pm-item"><strong>06 Career Arc</strong><span class="pm-tag">see the thinking evolve</span></span>
+  <span class="pm-item"><strong>06 Recognition</strong><span class="pm-tag">understand the people</span></span>
+  <span class="pm-arrow">→</span>
+  <span class="pm-item"><strong>07 Career Arc</strong><span class="pm-tag">see the thinking evolve</span></span>
 </div>
 
 <nav class="tabs" id="tabs">
@@ -102,8 +105,9 @@
   <button class="tab-btn" data-panel="queue-health"><span class="tab-num">2</span>Queue Health</button>
   <button class="tab-btn" data-panel="capacity-model"><span class="tab-num">3</span>Capacity Model</button>
   <button class="tab-btn" data-panel="frontline-chat"><span class="tab-num">4</span>Feedback Chat</button>
-  <button class="tab-btn" data-panel="recognition"><span class="tab-num">5</span>Recognition</button>
-  <button class="tab-btn" data-panel="career"><span class="tab-num">6</span>Career Arc</button>
+  <button class="tab-btn" data-panel="partner-launch"><span class="tab-num">5</span>Partner Launch</button>
+  <button class="tab-btn" data-panel="recognition"><span class="tab-num">6</span>Recognition</button>
+  <button class="tab-btn" data-panel="career"><span class="tab-num">7</span>Career Arc</button>
 </nav>
 
 <main>
@@ -268,6 +272,36 @@
     </div>
   </section>
 
+  <!-- ============ PANEL 5: PARTNER LAUNCH FRAMEWORK ============ -->
+  <section class="panel" id="panel-partner-launch">
+    <div class="panel-intro">
+      <span class="label">One Playbook → Many Partners</span>
+      <h2>Partner Launch Framework</h2>
+      <p class="problem">
+        At Google One, every partner launch showed up as its own custom project: different technical capability,
+        different customer base, different timeline. I built a repeatable framework instead, four pillars that
+        stayed constant, with enough flexibility inside each one to fit the partner in front of us.
+      </p>
+      <p class="hint">Pick a partner profile below to see how the plan adapts.</p>
+    </div>
+    <div class="disclaimer">Quick note: the partner names and specifics below are illustrative, not the real partners or proprietary details. The four-pillar structure and the scale (40+ partners, 72% growth) are real.</div>
+
+    <div class="stat-row" id="pt-stats"></div>
+
+    <div class="filter-row" id="pt-profile-buttons"></div>
+    <p class="hint" id="pt-profile-subtitle" style="margin: -6px 0 18px;"></p>
+
+    <div class="highlight-grid" id="pt-pillars"></div>
+
+    <div class="qh-detail" style="margin-top: 22px;">
+      <div class="qh-detail-header">
+        <h3>Launch timeline</h3>
+        <span class="qh-goal-note" id="pt-timeline-label"></span>
+      </div>
+      <div class="bar-track" id="pt-timeline-track"></div>
+    </div>
+  </section>
+
 
   <section class="panel" id="panel-recognition">
     <div class="panel-intro">
@@ -371,14 +405,16 @@
 </div>
 
 <footer>
-  Built by Ada Johnson. The Problem Library, Queue Health, Capacity Model, and Feedback Chat sections use
-  fictionalized data to protect real company information. Recognition and Career Arc are real.
+  Built by Ada Johnson. The Problem Library, Queue Health, Capacity Model, Feedback Chat, and Partner Launch
+  Framework sections use fictionalized data to protect real company and partner information. Recognition and
+  Career Arc are real.
 </footer>
 
 <script src="data/problem-library.js"></script>
 <script src="data/queue-health.js"></script>
 <script src="data/capacity-model.js"></script>
 <script src="data/frontline-feedback.js"></script>
+<script src="data/partner-launch.js"></script>
 <script src="data/recognition.js"></script>
 <script src="data/career.js"></script>
 <script src="js/main.js"></script>
@@ -386,6 +422,7 @@
 <script src="js/queue-health.js"></script>
 <script src="js/capacity-model.js"></script>
 <script src="js/frontline-feedback.js"></script>
+<script src="js/partner-launch.js"></script>
 <script src="js/recognition.js"></script>
 <script src="js/career.js"></script>
 </body>
