@@ -243,12 +243,12 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   align-items: flex-start;
   text-align: left;
   gap: 4px;
-  min-width: 150px;
+  min-width: 128px;
   flex: 1;
   background: var(--surface);
   border: var(--card-border);
   border-radius: var(--radius-sm);
-  padding: 14px 16px;
+  padding: 12px 14px;
 }
 .philosophy-map .pm-item strong {
   font-size: 13px;
