@@ -20,10 +20,14 @@
         <span class="quote-role-badge ${q.role}">${q.roleLabel}</span><span class="quote-year-badge">${q.company}${q.year ? " · " + q.year : ""}</span>
       </div></div>`).join("");
   }
-  function renderHighlights() {
-    document.getElementById("recognition-highlights").innerHTML = DATA.highlights.map((h) => `
+    function renderHighlights() {
+    const html = DATA.highlights.map((h) => `
       <div class="highlight-card"><div class="company-tag">${h.company}</div><div class="metric">${h.metric}</div>
       <div class="h-title">${h.title}</div><div class="detail">${h.detail}</div></div>`).join("");
+    const recognitionTarget = document.getElementById("recognition-highlights");
+    if (recognitionTarget) recognitionTarget.innerHTML = html;
+    const homepageTarget = document.getElementById("homepage-highlights");
+    if (homepageTarget) homepageTarget.innerHTML = html;
   }
   function wireFilters() {
     document.querySelectorAll("#recognition-company-filter button").forEach((btn) => btn.addEventListener("click", () => {
