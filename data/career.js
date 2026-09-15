@@ -1,6 +1,6 @@
 const CAREER = {
   narrative: [
-    "The way I think about my career is that each chapter has prepared me for the next one. I've spent my career at the intersection of customers, operations, and product strategy, and the common thread I keep coming back to is that I'm drawn to places with a lot of signal, but not enough structure to turn that signal into action.",
+    "The way I think about my career is that each chapter has prepared me for the next one. I've spent my career at the intersection of customers, operations, and product strategy, and the throughline is that I'm a multiplier: I find the signal other people miss, connect it to the people who can act on it, and turn individual expertise into collective capability.",
     "Early in my career at Best Buy and Target, I learned how important it is to stay close to the customer. In retail, you have to make decisions far in advance, and get them right, otherwise you're sitting on inventory nobody wants. That taught me to read customer behavior, spot friction early, and make calls with imperfect information.",
     "At Google, I learned how to scale. I worked in environments where success depended on aligning a lot of different teams, building repeatable programs, and turning new ideas into businesses that could work across markets.",
     "At Airbnb, I've learned how to build the systems that help organizations learn: creating feedback mechanisms, operating rhythms, and decision frameworks that turn complex signals, whether they're coming from customers, frontline teams, or business performance, into something teams can actually act on.",
@@ -20,7 +20,8 @@ const CAREER = {
     ]},
     { title:"Building Systems That Create Clarity from Complexity", years:"Google Corporate Engineering & Airbnb", theme:"Scaled operating models, platform integrity, and people leadership", color:"accent", roles:[
       { company:"Google", title:"Principal, Strategy and Product Operations", dates:"2021 to 2023", scope:"Built the business case and change strategy that moved an 800+ person frontline support org to a sustainable full-time-employee model." },
-      { company:"Airbnb", title:"Manager, Product Operations", dates:"2023 to Present", quote:"I build AI-enabled operating systems that help Airbnb's Fraud and Safety teams learn faster, make better product decisions, and scale trust across a global platform.", scope:"Turned 1,500+ frontline signals into a product prioritization system and designed the Queue Health Monitor, a unified operating view across Fraud & Safety." },
+      { company:"Airbnb", title:"Manager, Product Operations", dates:"2023 to 2026", quote:"I build AI-enabled operating systems that help Airbnb's Fraud and Safety teams learn faster, make better product decisions, and scale trust across a global platform.", scope:"Turned 1,500+ frontline signals into a product prioritization system and designed the Queue Health Monitor, a unified operating view across Fraud & Safety." },
+      { company:"Airbnb", title:"Manager, Project Implementation", dates:"2026 to Present", scope:"Leading a team of 6 within Airbnb's newly formed Scaled Services organization, resolving ownership ambiguity across implementation, policy, and operations teams." },
     ]},
   ],
 };
