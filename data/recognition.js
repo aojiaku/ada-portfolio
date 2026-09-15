@@ -73,8 +73,7 @@ const RECOGNITION = {
   ],
   highlights: [
     { company:"Google", title:"Launched Google hardware in the employee retail store", metric:"$9M incremental revenue", detail:"Sold 81,000 hardware units; Google hardware grew to 40% of total store sales, outperforming an average Best Buy location by 9x." },
-    { company:"Google", title:"Scaled Google One distribution partnerships globally", metric:"2 to 40+ markets in one year", detail:"Drove 72% growth in new partners and a 95% increase in Google One subscriptions." },
-        { company:"Google", title:"Led the shift from contractor to full-time frontline IT support", metric:"800+ roles transitioned", detail:"Broke through months of stalled decision-making, aligned Engineering, Finance, HR, and Legal, and improved support efficiency by 30% in under two months." },
+    { company:"Google", title:"Led the shift from contractor to full-time frontline IT support", metric:"800+ roles transitioned", detail:"Broke through months of stalled decision-making, aligned Engineering, Finance, HR, and Legal, and improved support efficiency by 30% in under two months." },
     { company:"Target", title:"Turned around the Baby Nursery Furniture category", metric:"-10% to +20% YoY growth", detail:"Redesigned the shopping experience around customer research, including a curated Inspired Baby Nursery Collection." },
   ],
 };
