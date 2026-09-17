@@ -1095,3 +1095,25 @@ footer {
     padding: 12px 15px;
   }
 }
+.standalone-header {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 20px 24px 0;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.standalone-back {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.standalone-back:hover { color: var(--primary); text-decoration: none; }
+.standalone-role {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
