@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ada Johnson: Problem Library</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="standalone-header">
+  <a href="index.html" class="standalone-back">← Ada Johnson</a>
+  <span class="standalone-role">Product Strategy &amp; Operations Leader</span>
+</div>
+<nav class="tabs">
+  <a class="tab-btn active" href="problem-library.html"><span class="tab-num">1</span>Problem Library</a>
+  <a class="tab-btn" href="queue-health.html"><span class="tab-num">2</span>Queue Health</a>
+  <a class="tab-btn" href="capacity-model.html"><span class="tab-num">3</span>Capacity Model</a>
+  <a class="tab-btn" href="feedback-chat.html"><span class="tab-num">4</span>Feedback Chat</a>
+  <a class="tab-btn" href="partner-launch.html"><span class="tab-num">5</span>Partner Launch</a>
+  <a class="tab-btn" href="recognition.html"><span class="tab-num">6</span>Recognition</a>
+</nav>
+
+<main>
+  <section class="panel active" id="panel-problem-library">
+    <div class="panel-intro">
+      <span class="label">Messy Feedback → Clear Priorities</span>
+      <h2>The Problem Library</h2>
+      <p class="problem">
+        Every day, frontline employees were spotting real problems: bugs, gaps, patterns worth flagging. But that
+        feedback was scattered across emails, chats, and forms, with no way to tell a problem that kept coming up
+        from a one-time complaint. I saw that gap and built the system to close it, turning scattered signal into
+        a single library leaders can act on. You can also ask it questions directly, instead of digging through a
+        spreadsheet.
+      </p>
+      <p class="hint">Click any row below to see what someone actually said.</p>
+    </div>
+    <div class="disclaimer">Quick note: the team names, quotes, and problem titles below are made up to protect real company data. The structure and scale match a real system I built and run.</div>
+
+    <div class="stat-row" id="pl-stats"></div>
+
+    <div class="filter-row">
+      <select id="pl-filter-severity">
+        <option value="">All priority levels</option>
+        <option value="P0">Urgent only</option>
+        <option value="P1">Important only</option>
+        <option value="P2">Minor only</option>
+      </select>
+      <select id="pl-filter-domain">
+        <option value="">All teams</option>
+      </select>
+      <button class="chip-toggle" id="pl-filter-cross">Spans multiple teams</button>
+      <button class="chip-toggle" id="pl-filter-quickwin">Already fixed</button>
+      <span class="count-note" id="pl-count-note"></span>
+    </div>
+
+    <div class="cluster-list" id="pl-cluster-list"></div>
+
+    <div class="qa-box">
+      <h3>Ask About These Problems</h3>
+      <p class="qa-sub">
+        This isn't a live AI chatbot. It's a simple tool that reads your question and finds the answer in the data
+        above. It works a lot like how I actually use AI at work: AI helps me find patterns fast, but a person
+        still decides what actually counts as a problem.
+      </p>
+      <div class="qa-suggestions" id="pl-qa-suggestions"></div>
+      <div class="qa-input-row">
+        <input type="text" id="pl-qa-input" placeholder="Type a question, or tap one above" />
+        <button id="pl-qa-submit">Ask</button>
+      </div>
+      <div class="qa-answer" id="pl-qa-answer" style="display:none;"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Built by Ada Johnson. This page uses fictionalized data to protect real company information. <a href="recognition.html">Recognition</a> and the <a href="index.html">career arc</a> are real.
+</footer>
+
+<script src="data/problem-library.js"></script>
+<script src="js/problem-library.js"></script>
+</body>
+</html>
