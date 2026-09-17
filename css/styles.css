@@ -1136,3 +1136,17 @@ footer {
   letter-spacing: 0.04em;
   color: #BFBFB6;
 }
+@media (max-width: 600px) {
+  .hero-identity {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .hero-photo {
+    width: 64px;
+    height: 64px;
+  }
+  .hero h1 {
+    font-size: 36px;
+  }
+}
