@@ -90,7 +90,7 @@ a:hover { color: var(--primary-dark); text-decoration: underline; text-underline
   text-align: left;
 }
 .hero h1 {
-  font-size: 46px;
+  font-size: 54px;
   font-weight: 600;
   margin: 0;
   letter-spacing: -0.03em;
@@ -1130,4 +1130,8 @@ footer {
   object-fit: cover;
   border: 1px solid var(--border);
   flex-shrink: 0;
+}
+.hero .role-tag {
+  font-weight: 400;
+  color: #A6A69E;
 }
