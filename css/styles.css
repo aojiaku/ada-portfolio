@@ -1149,4 +1149,7 @@ footer {
   .hero h1 {
     font-size: 36px;
   }
+  .hero .role-tag {
+    font-size: 10.5px;
+  }
 }
