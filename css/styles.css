@@ -1117,3 +1117,17 @@ footer {
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
+.hero-identity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 4px;
+}
+.hero-photo {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
