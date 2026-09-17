@@ -1153,3 +1153,6 @@ footer {
     font-size: 10.5px;
   }
 }
+.quote-role-badge.external-partner { background: var(--accent-tint); color: var(--accent-dark); }
+.quote-role-badge.mentor { background: var(--secondary-tint); color: var(--secondary); }
+.quote-role-badge.senior-leader { background: var(--primary-tint); color: var(--primary-dark); }
