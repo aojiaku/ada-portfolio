@@ -1133,5 +1133,6 @@ footer {
 }
 .hero .role-tag {
   font-weight: 400;
-  color: #A6A69E;
+  letter-spacing: 0.04em;
+  color: #BFBFB6;
 }
