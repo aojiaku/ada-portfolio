@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<style>
+  :root {
+    --bg: #FDFDFC;
+    --surface: #FFFFFF;
+    --text-primary: #1B1B18;
+    --text-secondary: #55554E;
+    --text-muted: #8A8A83;
+    --border: #E2E2DC;
+    --primary: #6B4FD8;
+    --primary-tint: #F0ECFC;
+    --secondary: #2F6B70;
+    --secondary-tint: #E7F1F2;
+    --accent: #C7A96B;
+    --accent-tint: #F6F0E3;
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; padding: 0;
+    font-family: 'Liberation Sans', 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-primary);
+    background: var(--bg);
+    font-size: 8.6pt;
+    line-height: 1.24;
+  }
+  .mono {
+    font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace;
+  }
+  .label {
+    font-family: 'Liberation Mono', 'DejaVu Sans Mono', monospace;
+    font-size: 7.6pt;
+    font-weight: bold;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .page { padding: 9px 34px 8px; }
+
+  /* ---- Header ---- */
+  .role-tag { font-size: 8.2pt; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'Liberation Mono', monospace; color: var(--text-muted); margin-bottom: 4px; }
+  h1 { font-size: 25pt; font-weight: bold; margin: 0 0 3px; letter-spacing: -0.01em; }
+  .contact-line { font-size: 8.6pt; color: var(--text-secondary); margin: 0 0 14px; }
+  .contact-line a { color: var(--primary); text-decoration: none; }
+  .contact-line span.sep { color: var(--border); margin: 0 6px; }
+
+  /* ---- Summary box (mirrors the site's meta-line / quick-note boxes) ---- */
+  .summary-box {
+    font-size: 8.6pt;
+    color: var(--text-secondary);
+    background: #F7F7F4;
+    border-left: 3px solid var(--secondary);
+    border-radius: 0 6px 6px 0;
+    padding: 7px 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  /* ---- Career arc loop-chain ---- */
+  .loop-chain { display: flex; flex-wrap: wrap; align-items: center; gap: 5px; margin-bottom: 8px; }
+  .loop-step {
+    font-family: 'Liberation Mono', monospace;
+    font-size: 7.6pt;
+    color: var(--primary);
+    background: var(--primary-tint);
+    border: 1px solid rgba(107,79,216,0.3);
+    border-radius: 5px;
+    padding: 4px 7px;
+    white-space: nowrap;
+  }
+  .row-label {
+    font-family: 'Liberation Mono', monospace;
+    font-size: 6.6pt;
+    font-weight: bold;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 1px;
+  }
+  .loop-arrow { color: var(--text-muted); font-size: 9pt; }
+
+  /* ---- Domain tags (capabilities) ---- */
+  .tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 6px; }
+  .domain-tag {
+    font-size: 7.2pt;
+    color: var(--text-secondary);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2.5px 6px;
+    white-space: nowrap;
+  }
+
+  /* ---- Section headers ---- */
+  .section-head {
+    font-family: 'Liberation Mono', monospace;
+    font-size: 7.8pt;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    margin: 9px 0 5px;
+  }
+  .section-head.first { margin-top: 0; }
+
+  /* ---- Role blocks ---- */
+  .role-block { border-left: 2.5px solid var(--accentcolor, var(--primary)); padding-left: 10px; margin-bottom: 3px; }
+  .role-block.c-primary { --accentcolor: var(--primary); }
+  .role-block.c-secondary { --accentcolor: var(--secondary); }
+  .role-block.c-accent { --accentcolor: var(--accent); }
+  .role-co-line { display: flex; align-items: baseline; gap: 6px; margin-bottom: 1px; }
+  .role-co { font-family: 'Liberation Mono', monospace; font-size: 7.2pt; color: var(--text-muted); letter-spacing: 0.04em; }
+  .role-dates { font-family: 'Liberation Mono', monospace; font-size: 7.2pt; color: var(--text-muted); white-space: nowrap; }
+  .role-dates::before { content: "\00b7"; margin-right: 6px; color: var(--border); }
+  .role-title { font-size: 9.6pt; font-weight: bold; margin: 0 0 2px; }
+  .role-scope { font-size: 8.3pt; color: var(--text-secondary); margin: 1px 0 1px; line-height: 1.24; }
+  .role-block ul { margin: 2px 0 0; padding-left: 15px; }
+  .role-block li { margin-bottom: 1px; font-size: 8.3pt; color: var(--text-secondary); line-height: 1.26; }
+
+  /* ---- Foundational experience: tighter, no bullets ---- */
+  .foundational .role-block { margin-bottom: 1px; }
+  .foundational .role-scope { margin-bottom: 1px; }
+  .foundational ul { margin-top: 1px; }
+  .foundational li { font-size: 7.7pt; margin-bottom: 0.5px; }
+
+  /* ---- Bottom two-column: Leadership / Education ---- */
+  .bottom-grid { display: flex; gap: 26px; margin-top: 0; }
+  .bottom-grid > div { flex: 1; min-width: 0; }
+  .bottom-grid ul { margin: 0; padding-left: 14px; }
+  .bottom-grid li { font-size: 7.9pt; color: var(--text-secondary); margin-bottom: 0.5px; line-height: 1.18; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="role-tag">Product Strategy &amp; Operations Leader</div>
+  <h1>Ada Johnson</h1>
+  <div class="contact-line">
+    San Francisco Bay Area <span class="sep">|</span> (612) 730-8319 <span class="sep">|</span>
+    <a href="mailto:aojiaku@gmail.com">aojiaku@gmail.com</a> <span class="sep">|</span>
+    <a href="https://adaj-portfolio.vercel.app">Portfolio</a> <span class="sep">|</span>
+    <a href="https://www.linkedin.com/in/adajohnson-sf/">LinkedIn</a>
+  </div>
+
+  <div class="summary-box">
+    Product Strategy &amp; Operations leader with 20 years of experience at Airbnb, Google, Target, and Best Buy.
+    A multiplier: I find the signal in customer, frontline, and operational data, connect it to the right people,
+    and turn individual expertise into collective capability, through feedback loops and operating models that
+    help organizations learn faster and scale responsibly.
+  </div>
+
+  <div class="row-label">Career Arc</div>
+  <div class="loop-chain">
+    <span class="loop-step">Customer-Centric Operator</span><span class="loop-arrow">&rarr;</span>
+    <span class="loop-step">Product &amp; Growth Strategist</span><span class="loop-arrow">&rarr;</span>
+    <span class="loop-step">Scalable Systems Builder</span><span class="loop-arrow">&rarr;</span>
+    <span class="loop-step">AI-Enabled Multiplier</span>
+  </div>
+
+  <div class="row-label">Core Capabilities</div>
+  <div class="tag-row">
+    <span class="domain-tag">Product Strategy &amp; Operations</span>
+    <span class="domain-tag">Retail Merchandising &amp; Buying</span>
+    <span class="domain-tag">Global Sourcing</span>
+    <span class="domain-tag">AI-Enabled Systems</span>
+    <span class="domain-tag">Voice of Customer</span>
+    <span class="domain-tag">Operating Models</span>
+    <span class="domain-tag">Go-to-Market Strategy</span>
+    <span class="domain-tag">Strategic Partnerships</span>
+  </div>
+
+  <div class="section-head first">Experience</div>
+
+  <div class="role-block c-primary">
+    <div class="role-co-line"><span class="role-co">AIRBNB</span><span class="role-dates">2026 &ndash; Present</span></div>
+    <div class="role-title">Manager, Project Implementation | Fraud &amp; Safety Delivery, Scaled Services</div>
+    <div class="role-scope">Lead a team of 6 within Airbnb's newly formed Scaled Services organization, resolving ownership ambiguity across implementation, policy, and operations teams, and building how we measure whether an implementation actually succeeds, not just whether it ships on schedule.</div>
+  </div>
+
+  <div class="role-block c-primary">
+    <div class="role-co-line"><span class="role-co">AIRBNB</span><span class="role-dates">2023 &ndash; 2026</span></div>
+    <div class="role-title">Manager, Product Operations | Global Trust &amp; Safety Platforms</div>
+    <div class="role-scope">Led Product Strategy &amp; Operations for Airbnb's global Fraud &amp; Safety ecosystem, building and scaling a Product Operations team of 4 that connects frontline insights, operational signals, and business outcomes across 70+ enforcement workflows spanning identity, safety, financial fraud, and content &amp; account integrity.</div>
+    <ul>
+      <li>Designed and launched Queue Health Monitor (QHM), an operating system that transformed fragmented operational reporting into a unified view of performance, root causes, incidents, launches, and frontline insights across five Fraud &amp; Safety domains</li>
+      <li>Built Airbnb's first AI-enabled frontline feedback intelligence system, transforming 1,500+ operational signals into 46 problem clusters, including 9 critical issues, that surfaced platform risks, operational inefficiencies, and prioritized product opportunities</li>
+      <li>Built AI-assisted workflows for business reviews and root-cause analysis, and created a closed-loop system linking Trust &amp; Safety specialists directly to Product and Engineering, accelerating synthesis while keeping human validation and full visibility from signal to shipped solution</li>
+      <li>Established Product Operations operating rhythms, ownership models, and executive reporting frameworks that improved alignment across Product, Engineering, Analytics, and Operations</li>
+    </ul>
+  </div>
+
+  <div class="role-block c-secondary">
+    <div class="role-co-line"><span class="role-co">GOOGLE</span><span class="role-dates">2021 &ndash; 2023</span></div>
+    <div class="role-title">Strategy &amp; Product Operations Principal | Google Technology &amp; Engineering</div>
+    <div class="role-scope">Led strategy and transformation initiatives for Google's global frontline technology support organization, redesigning operating models to improve scalability, efficiency, and workforce sustainability.</div>
+    <ul>
+      <li>Built the strategy and business case to transition 800+ frontline support roles from contractor to employee workforce across 7 global locations, aligning Engineering, Finance, HR, and Legal stakeholders</li>
+      <li>Reduced operational risk and improved support continuity through a redesigned workforce model and clearer ownership structure</li>
+      <li>Developed prioritization frameworks and executive decision mechanisms that accelerated alignment across complex stakeholder groups</li>
+    </ul>
+  </div>
+
+  <div class="role-block c-secondary">
+    <div class="role-co-line"><span class="role-co">GOOGLE</span><span class="role-dates">2019 &ndash; 2021</span></div>
+    <div class="role-title">Strategy &amp; Product Operations Lead | Google One Partnerships</div>
+    <div class="role-scope">Led global partner strategy and operations for Google One, scaling a consumer subscription product through telecommunications, OEM, and retail partnerships.</div>
+    <ul>
+      <li>Expanded Google One distribution from 2 to 40+ global partners, supporting an addressable audience of 89M+ users and contributing to 95% subscription growth</li>
+      <li>Built repeatable launch frameworks, partner playbooks, and operating rhythms that enabled global expansion across diverse markets</li>
+      <li>Translated partner insights, performance data, and customer signals into recommendations influencing product roadmap and growth strategy</li>
+    </ul>
+  </div>
+
+  <div class="section-head foundational-head">Foundational Experience</div>
+
+  <div class="foundational">
+    <div class="role-block c-secondary">
+      <div class="role-co-line"><span class="role-co">GOOGLE</span><span class="role-dates">2018 &ndash; 2019</span></div>
+    <div class="role-title">Product Planning Lead | Google Store</div>
+      <div class="role-scope">Built Google's retail hardware strategy by identifying customer demand signals and creating new channels for product discovery.</div>
+      <ul>
+        <li>Developed assortment strategy and P&amp;L frameworks supporting Google hardware growth</li>
+        <li>Created 10+ business plans connecting customer insights, financial opportunity, and operational execution</li>
+      </ul>
+    </div>
+
+    <div class="role-block c-secondary">
+      <div class="role-co-line"><span class="role-co">GOOGLE</span><span class="role-dates">2017 &ndash; 2018</span></div>
+    <div class="role-title">General Manager | Google West Hollywood Pop-Up Store (short-term)</div>
+      <ul>
+        <li>Directed 40+ cross-functional staff to launch Google's first LA pop-up retail store, exceeding sales and conversion targets by 5%</li>
+        <li>Provided learnings that informed Google's retail expansion strategy</li>
+      </ul>
+    </div>
+
+    <div class="role-block c-secondary">
+      <div class="role-co-line"><span class="role-co">GOOGLE</span><span class="role-dates">2016 &ndash; 2018</span></div>
+    <div class="role-title">Global Program Manager | Google Merchandise Store</div>
+      <div class="role-scope">Built and scaled Google's global merchandise program across 48 countries, connecting customer experience, brand strategy, and operational execution.</div>
+      <ul>
+        <li>Increased revenue 43% over two years while managing a $14M global program</li>
+        <li>Introduced Google hardware into the merchandise ecosystem, generating $9M incremental revenue and 81K+ device sales</li>
+        <li>Created a customer-driven retail model that informed Google's broader hardware strategy</li>
+      </ul>
+    </div>
+
+    <div class="role-block c-accent">
+      <div class="role-co-line"><span class="role-co">TARGET CORPORATION</span><span class="role-dates">2014 &ndash; 2015</span></div>
+    <div class="role-title">Senior Buyer | Infant &amp; Toddler Furniture</div>
+      <div class="role-scope">Transformed a declining $75M category through customer insight, assortment strategy, and digital experience redesign.</div>
+      <ul>
+        <li>Reversed category performance from declining growth to +20% YoY improvement</li>
+        <li>Increased engagement and conversion through customer-centered merchandising experiences</li>
+      </ul>
+    </div>
+
+    <div class="role-block c-accent">
+      <div class="role-co-line"><span class="role-co">TARGET CORPORATION</span><span class="role-dates">2012 &ndash; 2014</span></div>
+    <div class="role-title">Senior Product Manager | Global Sourcing, Women's Apparel</div>
+      <div class="role-scope">Managed global sourcing strategy for $90M in owned-brand products across international supplier networks.</div>
+      <ul>
+        <li>Delivered $4M annual cost savings through supplier strategy and process improvements</li>
+        <li>Built scalable sourcing frameworks supporting 1,800+ retail locations</li>
+      </ul>
+    </div>
+
+    <div class="role-block c-accent">
+      <div class="role-co-line"><span class="role-co">BEST BUY CORPORATION</span><span class="role-dates">2006 &ndash; 2012</span></div>
+    <div class="role-title">Merchant &amp; Category Strategy | Various Categories</div>
+      <div class="role-scope">Managed multi-million-dollar product portfolios, partnering with vendors and cross-functional teams to optimize assortment, drive growth, and improve customer experiences.</div>
+      <ul>
+        <li>Led publisher partnerships and go-to-market strategies across 500+ SKUs</li>
+        <li>Co-developed a $5M Batman Arkham City launch campaign generating $10M first-week revenue and significant market share growth</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom-grid">
+    <div>
+      <div class="section-head">Leadership</div>
+      <ul>
+        <li>Co-Founder &amp; Lead Organizer, Black in Product Operations @ Google</li>
+        <li>Former Alumni Board President &amp; Guest Lecturer, UMN College of Design</li>
+        <li>NCAA Division I Track &amp; Field, University of Minnesota (Alumna)</li>
+      </ul>
+    </div>
+    <div>
+      <div class="section-head">Education</div>
+      <ul>
+        <li>MBA, Business Entrepreneurship, Bethel University, Saint Paul, Minnesota</li>
+        <li>BS, Retail Merchandising &amp; Business Management, University of Minnesota, Twin Cities</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
