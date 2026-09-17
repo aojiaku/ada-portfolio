@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ada Johnson: Frontline Feedback Chat</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="standalone-header">
+  <a href="index.html" class="standalone-back">← Ada Johnson</a>
+  <span class="standalone-role">Product Strategy &amp; Operations Leader</span>
+</div>
+<nav class="tabs">
+  <a class="tab-btn" href="problem-library.html"><span class="tab-num">1</span>Problem Library</a>
+  <a class="tab-btn" href="queue-health.html"><span class="tab-num">2</span>Queue Health</a>
+  <a class="tab-btn" href="capacity-model.html"><span class="tab-num">3</span>Capacity Model</a>
+  <a class="tab-btn active" href="feedback-chat.html"><span class="tab-num">4</span>Feedback Chat</a>
+  <a class="tab-btn" href="partner-launch.html"><span class="tab-num">5</span>Partner Launch</a>
+  <a class="tab-btn" href="recognition.html"><span class="tab-num">6</span>Recognition</a>
+</nav>
+
+<main>
+  <section class="panel active" id="panel-frontline-chat">
+    <div class="panel-intro">
+      <span class="label">AI Experiment</span>
+      <h2>What if frontline feedback could talk back?</h2>
+      <p class="problem">
+        Most teams run employee surveys the same way: one check-in, a follow-up a few months later, then a slide
+        full of numbers. I wanted something different, so I built a small experiment: instead of reading a summary
+        slide, you can ask the data questions directly and get answers based on real themes and quotes.
+      </p>
+      <p class="hint">Type a question below, or tap one to get started.</p>
+    </div>
+    <div class="disclaimer">Quick note: the themes, scores, and quotes below are made up. The structure, one survey and a 90-day follow-up, matches a real survey I designed and ran. Two scores are shown: a 0-100 engagement score, and a 1-5 overall mood rating from the same survey.</div>
+
+    <div class="stat-row" id="ff-stats"></div>
+
+    <div class="chat-window" id="ff-chat-window"></div>
+    <div class="qa-suggestions" id="ff-suggestions"></div>
+    <div class="qa-input-row">
+      <input type="text" id="ff-input" placeholder="Ask something, or tap a question above" />
+      <button id="ff-send">Send</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Built by Ada Johnson. This page uses fictionalized data to protect real company information. <a href="recognition.html">Recognition</a> and the <a href="index.html">career arc</a> are real.
+</footer>
+
+<script src="data/frontline-feedback.js"></script>
+<script src="js/frontline-feedback.js"></script>
+</body>
+</html>
