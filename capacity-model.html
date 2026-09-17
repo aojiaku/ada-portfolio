@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ada Johnson: Capacity Model</title>
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+<div class="standalone-header">
+  <a href="index.html" class="standalone-back">← Ada Johnson</a>
+  <span class="standalone-role">Product Strategy &amp; Operations Leader</span>
+</div>
+<nav class="tabs">
+  <a class="tab-btn" href="problem-library.html"><span class="tab-num">1</span>Problem Library</a>
+  <a class="tab-btn" href="queue-health.html"><span class="tab-num">2</span>Queue Health</a>
+  <a class="tab-btn active" href="capacity-model.html"><span class="tab-num">3</span>Capacity Model</a>
+  <a class="tab-btn" href="feedback-chat.html"><span class="tab-num">4</span>Feedback Chat</a>
+  <a class="tab-btn" href="partner-launch.html"><span class="tab-num">5</span>Partner Launch</a>
+  <a class="tab-btn" href="recognition.html"><span class="tab-num">6</span>Recognition</a>
+</nav>
+
+<main>
+  <section class="panel active" id="panel-capacity-model">
+    <div class="panel-intro">
+      <span class="label">Team Size → Workload → Priorities → Capacity</span>
+      <h2>Capacity Model</h2>
+      <p class="problem">
+        My team juggled four different kinds of work at the same time: regular reporting meetings, big strategic
+        projects, everyday casework, and last-minute fires to put out. I could explain any single project, but not
+        our total workload or where the real tradeoffs were. I built a model that connects team size and workload
+        to what's actually needed in each area, so a conversation about priorities can start with real numbers
+        instead of a gut feeling.
+      </p>
+      <p class="hint">Drag any slider below and watch the numbers update.</p>
+    </div>
+    <div class="disclaimer">Quick note: the category names and hours below are made up. The idea behind it, team size and hours compared to what each area actually needs, matches a real planning tool I built and use.</div>
+
+    <div class="cm-layout">
+      <div class="cm-controls">
+        <div class="slider-group">
+          <label>Team size <span class="slider-val" id="cm-headcount-val"></span></label>
+          <input type="range" id="cm-headcount" />
+        </div>
+        <div class="slider-group">
+          <label>Hours per person, per week <span class="slider-val" id="cm-hours-val"></span></label>
+          <input type="range" id="cm-hours" />
+        </div>
+        <div class="slider-group">
+          <label>Growth in workload <span class="slider-val" id="cm-demand-val"></span></label>
+          <input type="range" id="cm-demand" />
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:18px 0;" />
+        <div class="label" style="margin-bottom:10px;">Where the team's time goes</div>
+        <div id="cm-allocation-sliders"></div>
+        <div class="cm-alloc-sum" id="cm-alloc-sum"></div>
+      </div>
+
+      <div class="cm-results">
+        <div class="stat-row" id="cm-stats"></div>
+        <div class="cluster-list" id="cm-category-list"></div>
+      </div>
+    </div>
+
+    <div class="cm-asana">
+      <div class="cm-asana-title">Where These Numbers Actually Come From</div>
+      <div class="cm-asana-sub">Every week, the team logs real tasks in Asana and tags each one by category. Add up the tags, and you get the hours you see above. Here's a sample of what that looks like.</div>
+      <div id="cm-asana-list"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  Built by Ada Johnson. This page uses fictionalized data to protect real company information. <a href="recognition.html">Recognition</a> and the <a href="index.html">career arc</a> are real.
+</footer>
+
+<script src="data/capacity-model.js"></script>
+<script src="js/capacity-model.js"></script>
+</body>
+</html>
