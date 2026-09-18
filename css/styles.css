@@ -1156,3 +1156,15 @@ footer {
 .quote-role-badge.external-partner { background: var(--accent-tint); color: var(--accent-dark); }
 .quote-role-badge.mentor { background: var(--secondary-tint); color: var(--secondary); }
 .quote-role-badge.senior-leader { background: var(--primary-tint); color: var(--primary-dark); }
+.philosophy-band {
+  background: #E4DCFA;
+  border-top: 1px solid rgba(107,79,216,0.35);
+  border-bottom: 1px solid rgba(107,79,216,0.35);
+  padding-bottom: 6px;
+}
+.philosophy-band .philosophy-lead {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 28px;
+  color: var(--primary-dark);
+}
