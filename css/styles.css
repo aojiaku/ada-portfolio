@@ -1172,4 +1172,5 @@ footer {
   border-top: none;
   margin-top: 0;
   padding-top: 28px;
+  color: var(--primary-dark);
 }
