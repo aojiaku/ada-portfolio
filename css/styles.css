@@ -1162,9 +1162,14 @@ footer {
   border-bottom: 1px solid rgba(107,79,216,0.35);
   padding-bottom: 6px;
 }
+.philosophy-band {
+  background: var(--primary-tint);
+  border-top: 1px solid rgba(107,79,216,0.25);
+  border-bottom: 1px solid rgba(107,79,216,0.25);
+  padding-bottom: 6px;
+}
 .philosophy-band .philosophy-lead {
   border-top: none;
   margin-top: 0;
   padding-top: 28px;
-  color: var(--primary-dark);
 }
