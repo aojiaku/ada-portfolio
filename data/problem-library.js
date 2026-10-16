@@ -1,4 +1,15 @@
 const PROBLEM_LIBRARY = {
+  // Real results from the system at Airbnb (as of Oct 2026). Shown as the headline tiles.
+  headline: [
+    { value: "1,360+", label: "Frontline reports reviewed" },
+    { value: "1,102", label: "Problems, each one broken step for one user type" },
+    { value: "94%", label: "Routed to an owning team" },
+    { value: "20", label: "Fixes shipped in about 3.5 months, at a median of 31 days" },
+    { value: "8.5 mo", label: "Median wait for those problems before the library" },
+    { value: "46% vs 2%", label: "Ship rate with a named owner vs without one" },
+  ],
+
+  // Illustrative sample data for the example below. Not real company data.
   meta: {
     totalSubmissions: 1612,
     totalClusters: 46,

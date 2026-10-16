@@ -18,7 +18,7 @@ The six tools above are framed on the homepage as one feedback loop: catch the s
 
 ## A note on the data
 
-The first five interactive sections are built on the structure and scale of real systems I've designed and run at Airbnb, Google, and elsewhere. To protect company information, the names, quotes, and numbers in those sections are made up. The Recognition and Career Arc sections use real feedback, with individual names replaced by role titles (Manager, Peer, Direct Report).
+The first five interactive sections are built on the structure and scale of real systems I've designed and run at Airbnb, Google, and elsewhere. To protect company information, the names, quotes, and numbers in those sections are made up, and each page is labeled "Illustrative example." The exception is the Problem Library's headline tiles, labeled "Real results," which show the audited results of the real system. The Recognition and Career Arc sections use real feedback, with individual names replaced by role titles (Manager, Peer, Direct Report).
 
 ## Also on the site
 

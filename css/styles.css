@@ -466,6 +466,20 @@ main {
   line-height: 1.55;
 }
 
+.philosophy-note {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: -4px 0 14px;
+}
+.section-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
 /* ---- Stat tiles ---- */
 .stat-row {
   display: grid;

@@ -1,8 +1,8 @@
 const PARTNER_LAUNCH = {
   stats: [
-    { value: "40+", label: "Distribution partners launched, up from 2" },
-    { value: "72%", label: "Growth in new partners year over year" },
-    { value: "95%", label: "Increase in subscriptions across the partner base" },
+    { value: "40+", label: "Distribution partners in the program by the time I left; I launched and managed 11+" },
+    { value: "72%", label: "Of Google One's partner-channel trial starts came from the 11+ partnerships I launched" },
+    { value: "95%", label: "Google One subscription growth that year, with partners as a key channel" },
   ],
   profiles: [
     {
