@@ -1,13 +1,13 @@
 const PROBLEM_LIBRARY = {
   // Real results from the system at Airbnb (as of Oct 2026). Shown as the headline tiles.
-  headline: [
-    { value: "1,360+", label: "Frontline reports reviewed" },
-    { value: "1,102", label: "Problems, each one broken step for one user type" },
-    { value: "94%", label: "Routed to an owning team" },
-    { value: "20", label: "Fixes shipped in about 3.5 months, at a median of 31 days" },
-    { value: "8.5 mo", label: "Median wait for those problems before the library" },
-    { value: "46% vs 2%", label: "Ship rate with a named owner vs without one" },
+  funnel: [
+    { value: "1,360+", label: "Reports", caption: "Frontline feedback pulled from a dozen channels" },
+    { value: "1,102", label: "Problems", caption: "Each report broken down to one broken step for one type of user" },
+    { value: "46", label: "Clusters", caption: "Problems grouped by pattern, then scored on customer and business impact" },
+    { value: "94%", label: "Owned", caption: "Problems routed to a named owning team" },
+    { value: "20", label: "Fixes shipped", caption: "In about 3.5 months, for problems that had waited a median of 8.5 months" },
   ],
+  ownershipProof: "Problems with a named owner shipped 46% of the time. Without one, 2%.",
 
   // Illustrative sample data for the example below. Not real company data.
   meta: {

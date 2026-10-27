@@ -31,11 +31,13 @@
     return Object.entries(totals).sort((a, b) => b[1] - a[1]);
   }
 
+  const totalReports = clusters.reduce((s, c) => s + c.count, 0);
+
   function renderStats() {
-    const stats = DATA.headline;
-    document.getElementById("pl-stats").innerHTML = stats
-      .map((s) => `<div class="stat-tile"><div class="value">${s.value}</div><div class="label">${s.label}</div></div>`)
-      .join("");
+    document.getElementById("pl-funnel").innerHTML = DATA.funnel
+      .map((s, i) => `<div class="funnel-step"><div class="funnel-label">${i + 1} · ${s.label}</div><div class="value">${s.value}</div><div class="caption">${s.caption}</div></div>`)
+      .join('<div class="funnel-arrow" aria-hidden="true">→</div>');
+    document.getElementById("pl-proof").textContent = DATA.ownershipProof;
   }
 
   function populateDomainFilter() {
@@ -60,15 +62,11 @@
     });
   }
 
-  function renderClusterList() {
-    const filtered = applyFilters().sort((a, b) => b.count - a.count);
-    document.getElementById("pl-count-note").textContent = `Showing ${filtered.length} of ${clusters.length}`;
-    document.getElementById("pl-cluster-list").innerHTML = filtered
-      .map((c) => {
-        const pct = Math.round((c.count / maxCount) * 100);
-        const quoteHtml = c.quotes && c.quotes.length ? `<div class="quote">"${c.quotes[0]}"</div>` : "";
-        const impactHtml = c.impact ? `<div class="impact-line">→ ${c.impact}</div>` : "";
-        return `
+  function rowHtml(c) {
+    const pct = Math.round((c.count / maxCount) * 100);
+    const quoteHtml = c.quotes && c.quotes.length ? `<div class="quote">"${c.quotes[0]}"</div>` : "";
+    const impactHtml = c.impact ? `<div class="impact-line">→ ${c.impact}</div>` : "";
+    return `
         <div class="cluster-row" data-id="${c.id}">
           <div class="row-top">
             <div class="title">${c.title}</div>
@@ -84,6 +82,27 @@
           ${impactHtml}
           ${quoteHtml}
         </div>`;
+  }
+
+  function renderClusterList() {
+    const filtered = applyFilters().sort((a, b) => b.count - a.count);
+    document.getElementById("pl-count-note").textContent = `Showing ${filtered.length} of ${clusters.length} clusters`;
+    const list = document.getElementById("pl-cluster-list");
+    if (!filtered.length) {
+      list.innerHTML = `<p class="cluster-empty">No clusters match these filters. Clear a filter to see more.</p>`;
+      return;
+    }
+    const filtering = state.severity || state.domain || state.crossOnly || state.quickWinOnly;
+    list.innerHTML = ["P0", "P1", "P2"]
+      .map((sev) => {
+        const group = filtered.filter((c) => c.severity === sev);
+        if (!group.length) return "";
+        const open = filtering || sev === "P0" ? " open" : "";
+        const reports = group.reduce((s, c) => s + c.count, 0);
+        return `<details class="cluster-group"${open}>
+          <summary><span class="group-name">${SEVERITY_LABEL[sev]}</span><span class="group-meta">${group.length} clusters · ${fmt(reports)} reports</span></summary>
+          <div class="group-rows">${group.map(rowHtml).join("")}</div>
+        </details>`;
       })
       .join("");
 
@@ -124,21 +143,21 @@
     const top = [...clusters].sort((a, b) => b.count - a.count).slice(0, 5);
     return `<p>Ranked by how often it came up, here's what people are flagging most:</p><ol>${top
       .map((c) => listItem(c, false))
-      .join("")}</ol><p>Together these 5 problems account for ${fmt(top.reduce((s, c) => s + c.count, 0))} of the ${fmt(
-      DATA.meta.totalSubmissions
-    )}+ reports in the library.</p>`;
+      .join("")}</ol><p>Together these 5 clusters account for ${fmt(top.reduce((s, c) => s + c.count, 0))} of the ${fmt(
+      totalReports
+    )} reports in this example.</p>`;
   }
 
   function answerCrossQueue() {
     const cross = clusters.filter((c) => c.crossQueue).sort((a, b) => b.count - a.count);
-    return `<p>${cross.length} of the ${DATA.meta.totalClusters} problems show up on more than one team. That usually means no single team owns the fix, which is often why they've gone unaddressed:</p><ul>${cross
+    return `<p>${cross.length} of the ${DATA.meta.totalClusters} clusters show up on more than one team. That usually means no single team owns the fix, which is often why they've gone unaddressed:</p><ul>${cross
       .map((c) => listItem(c, false))
       .join("")}</ul>`;
   }
 
   function answerTopImpact() {
     const p0 = clusters.filter((c) => c.severity === "P0").sort((a, b) => b.count - a.count);
-    return `<p>These ${p0.length} problems matter most right now. They're ranked on a mix of how often they're reported, how many teams they touch, and the cost of leaving them unfixed (wasted time or money at risk):</p><ol>${p0
+    return `<p>These ${p0.length} urgent clusters matter most right now. They're ranked on a mix of how often they're reported, how many teams they touch, and the cost of leaving them unfixed (wasted time or money at risk):</p><ol>${p0
       .map((c) => listItem(c, true))
       .join("")}</ol>`;
   }
@@ -165,11 +184,10 @@
 
   function answerSummary() {
     const m = DATA.meta;
-    return `<p>The library holds ${fmt(m.totalSubmissions)}+ reports, organized into ${m.totalClusters} recurring
-      problems. ${m.p0Count} of those are urgent. ${m.quickWinsShipped} fixes have already shipped out of
+    return `<p>This example holds ${fmt(totalReports)} reports, grouped into ${m.totalClusters} clusters. ${m.p0Count} of those are urgent. ${m.quickWinsShipped} fixes have already shipped out of
       ${m.quickWinsIdentified} we found, and altogether this surfaced ${fmt(m.monthlyReworkHours)}+ hours a month of
       wasted work, plus ${m.fraudExposureMonthly} in money at risk. Try one of the questions above, or ask about a
-      specific team, problems that span teams, or fixes we've already shipped.</p>`;
+      specific team, clusters that span teams, or fixes we've already shipped.</p>`;
   }
 
   function answerQuestion(raw) {
