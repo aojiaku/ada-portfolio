@@ -28,22 +28,37 @@
 <main>
   <section class="panel active" id="panel-queue-health">
     <div class="panel-intro">
-      <span class="label">How Much → How Fast → How Well</span>
+      <span class="label">Enough people → Fast enough → Getting it right</span>
       <h2>Queue Health Monitor</h2>
       <p class="problem">
-        Leaders had plenty of data, but no single place to see how any team was actually doing. Case volume,
-        on-time rates, quality scores, and speed all lived in different tools, so a 70-slide weekly meeting could
-        explain <em>what</em> happened but rarely <em>why</em>. I built a single view that puts every team on the
-        same three simple measures: how much work is coming in, how fast it's handled, and how well it's done.
+        Leaders had plenty of data, but no single place to see how any team was actually doing. Our weekly business
+        review had grown to more than 70 slides that explained <em>what</em> happened but rarely <em>why</em>, or who
+        should act. I designed a single view that answers three questions leaders actually ask about every team:
+        do we have enough people, are we fast enough, and are we getting it right? Every red number sits next to its
+        likely cause and an owning team.
       </p>
-      <p class="hint">Click a team card to see its 8-week trend and what's actually going on behind it.</p>
+      <p class="hint"><strong>Start here:</strong> read the real results below. Then click a team card to see its 8-week trend and what's behind the number.</p>
     </div>
+    <div class="section-tag">Real results · the system I designed at Airbnb</div>
+    <div class="stat-row qh-real">
+      <div class="stat-tile"><div class="value">70+ → 3</div><div class="label">A 70-plus slide weekly review replaced by three questions</div></div>
+      <div class="stat-tile"><div class="value">5 of 5</div><div class="label">Fraud &amp; Safety domains on the official tool, rebuilt by Analytics from my prototype</div></div>
+      <div class="stat-tile"><div class="value">Retired</div><div class="label">The old manual scorecard, once the tool became the source of truth</div></div>
+    </div>
+
+    <div class="qh-questions">
+      <div><div class="q">Do we have enough people?</div><div class="m">Volume and backlog</div></div>
+      <div><div class="q">Are we fast enough?</div><div class="m">On-time rate and time to resolve</div></div>
+      <div><div class="q">Are we getting it right?</div><div class="m">Quality</div></div>
+    </div>
+
     <div class="section-tag">Illustrative example</div>
-    <div class="disclaimer">Quick note: team names and numbers below are made up. The 3-part framework behind it (how much, how fast, how well) comes from the prototype I designed, which Analytics rebuilt as Fraud &amp; Safety's official queue health tool.</div>
+    <div class="disclaimer">Everything below is an illustrative example. Team names and numbers are made up to protect real company data. The three questions and the layout match the prototype I designed, which Analytics rebuilt as Fraud &amp; Safety's official queue health tool.</div>
 
     <div class="stat-row" id="qh-stats"></div>
 
     <div class="qh-grid" id="qh-cards"></div>
+    <p class="qh-key">Backlog: 1.0x means the team is keeping up with incoming work. Above 1.2x means work is piling up faster than it gets done.</p>
 
     <div class="qh-detail">
       <div class="qh-detail-header">
@@ -56,7 +71,7 @@
 
       <div class="qh-signals">
         <div class="qh-signals-title">What's Behind the Number</div>
-        <div class="qh-signals-sub">This is the real differentiator: instead of just a metric, everything that explains it lives in one place, launches, bugs, known issues, and fixes already shipped.</div>
+        <div class="qh-signals-sub">Next to each number: what launched, what broke, what's still open, and what's already been fixed. This is what turned the review from a report into a decision.</div>
         <div id="qh-signals-list"></div>
       </div>
     </div>
@@ -67,6 +82,7 @@
   Built by Ada Johnson. This page uses fictionalized data to protect real company information. <a href="recognition.html">Recognition</a> and the <a href="index.html">career arc</a> are real.
 </footer>
 
+<script src="data/problem-library.js"></script>
 <script src="data/queue-health.js"></script>
 <script src="js/queue-health.js"></script>
 <script src="js/pwa-register.js"></script>

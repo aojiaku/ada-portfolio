@@ -235,9 +235,21 @@
     });
   }
 
+  function openFromHash() {
+    const id = decodeURIComponent((location.hash || "").slice(1));
+    if (!/^C\d+$/.test(id)) return;
+    const row = document.querySelector(`.cluster-row[data-id="${id}"]`);
+    if (!row) return;
+    const group = row.closest("details");
+    if (group) group.open = true;
+    row.classList.add("expanded");
+    row.scrollIntoView({ block: "center" });
+  }
+
   renderStats();
   populateDomainFilter();
   wireFilters();
   renderClusterList();
   wireQA();
+  openFromHash();
 })();

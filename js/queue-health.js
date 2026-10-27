@@ -7,7 +7,7 @@
     { key: "volume", label: "Volume", fmt: (v) => Math.round(v).toLocaleString("en-US"), target: null, goalNote: "How many cases came in that week" },
     { key: "ahtMin", label: "Time to Resolve", fmt: (v) => v.toFixed(1) + " min", target: null, goalNote: "Average minutes to resolve one case" },
     { key: "qualityPct", label: "Quality", fmt: (v) => v.toFixed(1) + "%", target: null, goalNote: "Share of cases that passed a quality review" },
-    { key: "backlogMult", label: "Backlog Pressure", fmt: (v) => v.toFixed(2) + "x", target: 1.2, goalNote: "1.0x means the team is keeping up. Above 1.2x means work is piling up faster than it's getting done." },
+    { key: "backlogMult", label: "Backlog", fmt: (v) => v.toFixed(2) + "x", target: 1.2, goalNote: "1.0x means the team is keeping up. Above 1.2x means work is piling up faster than it's getting done." },
   ];
 
   const state = { queueIdx: 0, metricKey: "slaPct" };
@@ -62,7 +62,7 @@
           </div>
           <span class="qh-status-pill ${status.cls}"><span class="dot"></span>${status.label}</span>
           <div class="qh-sub-metrics">
-            ${cur.volume.toLocaleString("en-US")} cases · ${cur.ahtMin.toFixed(1)} min to resolve · ${cur.backlogMult.toFixed(2)}x backlog
+            ${cur.volume.toLocaleString("en-US")} cases · ${cur.ahtMin.toFixed(1)} min each · backlog ${cur.backlogMult.toFixed(1)}x
           </div>
         </div>`;
       })
@@ -156,15 +156,7 @@
   }
 
   function jumpToProblem(clusterId) {
-    const plTabBtn = document.querySelector('.tab-btn[data-panel="problem-library"]');
-    if (plTabBtn) plTabBtn.click();
-    setTimeout(() => {
-      const row = document.querySelector(`.cluster-row[data-id="${clusterId}"]`);
-      if (row) {
-        row.classList.add("expanded");
-        row.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 60);
+    window.location.href = "problem-library.html#" + clusterId;
   }
 
   function renderSignals(q) {
@@ -186,7 +178,7 @@
         type: "issue",
         icon: "🔎",
         title: knownIssue.title,
-        meta: `Reported ${knownIssue.count} times, still open — see it in the Problem Library`,
+        meta: `Reported ${knownIssue.count} times and still open. See it in the Problem Library.`,
         clusterId: knownIssue.id,
       });
     }

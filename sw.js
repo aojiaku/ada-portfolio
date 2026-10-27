@@ -2,7 +2,7 @@
 // on repeat visits and installs as an app. Falls back to network for
 // anything not pre-cached, and never blocks a first-time visit.
 
-const CACHE_NAME = 'ada-portfolio-v3';
+const CACHE_NAME = 'ada-portfolio-v4';
 
 const APP_SHELL = [
   '/',
