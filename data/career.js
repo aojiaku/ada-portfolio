@@ -20,7 +20,7 @@ const CAREER = {
     ]},
     { title:"Building Systems That Fix Problems", years:"Google Corporate Engineering & Airbnb", theme:"Scaled operating models, platform integrity, and people leadership", color:"accent", roles:[
       { company:"Google", title:"Principal, Strategy and Product Operations", dates:"2021 to 2023", scope:"Co-led the business case and change strategy that moved an 800+ person frontline support org to a sustainable full-time-employee model; 249 of 252 contractors accepted full-time offers (98.8%)." },
-      { company:"Airbnb", title:"Manager, Product Operations", dates:"2023 to 2026", quote:"I build AI-enabled operating systems that help Airbnb's Fraud and Safety teams learn faster, make better product decisions, and scale trust across a global platform.", scope:"Turned 1,360+ agent reports into 1,102 prioritized problems and designed the Queue Health Monitor, a unified operating view across Fraud & Safety." },
+      { company:"Airbnb", title:"Manager, Product Operations", dates:"2023 to 2026", quote:"I build AI-enabled operating systems that help Airbnb's Fraud and Safety teams learn faster, make better product decisions, and scale trust across a global platform.", scope:"Built the frontline feedback loop that turned 1,360+ agent reports into 1,102 problems and 46 prioritized clusters, and designed the prototype for the Queue Health Monitor, Fraud & Safety's official operating view." },
       { company:"Airbnb", title:"Manager, Project Implementation", dates:"2026 to Present", scope:"Leading a team of 6 within Airbnb's newly formed Scaled Services organization, resolving ownership ambiguity across implementation, policy, and operations teams." },
     ]},
   ],
