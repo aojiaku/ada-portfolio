@@ -7,7 +7,7 @@ const PROBLEM_LIBRARY = {
     { value: "94%", label: "Owned", caption: "Problems routed to a named owning team" },
     { value: "20", label: "Fixes shipped", caption: "In about 3.5 months, for problems that had waited a median of 8.5 months" },
   ],
-  ownershipProof: "Problems with a named owner shipped 46% of the time. Without one, 2%.",
+  ownershipProof: "Problems with a named owner shipped 46% of the time. Without one, 2%. It still runs today. Engineering now uses the library as one of its sources for a regular sprint of fixes.",
 
   // Illustrative sample data for the example below. Not real company data.
   meta: {
