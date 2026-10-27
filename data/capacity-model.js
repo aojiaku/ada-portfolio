@@ -12,7 +12,7 @@ const CAPACITY_MODEL = {
       color: "secondary",
       baseRequiredHrs: 42,
       scalesWithDemand: 0,
-      defaultAllocationPct: 15,
+      defaultAllocationPct: 16,
       note: "This stays about the same no matter how busy things get.",
     },
     {
@@ -21,7 +21,7 @@ const CAPACITY_MODEL = {
       color: "primary",
       baseRequiredHrs: 110,
       scalesWithDemand: 1.0,
-      defaultAllocationPct: 40,
+      defaultAllocationPct: 43,
       note: "Grows directly with how much work is coming in.",
     },
     {
@@ -30,7 +30,7 @@ const CAPACITY_MODEL = {
       color: "accent",
       baseRequiredHrs: 70,
       scalesWithDemand: 0,
-      defaultAllocationPct: 26,
+      defaultAllocationPct: 30,
       note: "A fixed goal set by leadership, not tied to workload.",
     },
     {
@@ -39,7 +39,7 @@ const CAPACITY_MODEL = {
       color: "critical",
       baseRequiredHrs: 28,
       scalesWithDemand: 0.5,
-      defaultAllocationPct: 10,
+      defaultAllocationPct: 11,
       note: "Grows a bit with workload, but spikes are hard to predict.",
     },
   ],

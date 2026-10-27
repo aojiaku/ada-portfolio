@@ -1,8 +1,8 @@
 const PARTNER_LAUNCH = {
   stats: [
-    { value: "40+", label: "Distribution partners in the program by the time I left; I launched and managed 11+" },
-    { value: "72%", label: "Of Google One's partner-channel trial starts came from the 11+ partnerships I launched" },
-    { value: "95%", label: "Google One subscription growth that year, with partners as a key channel" },
+    { value: "11+", label: "Partnerships I launched and managed, reaching 89 million users" },
+    { value: "72%", label: "Of Google One's partner-channel trial starts came from those partnerships, in under 10 months" },
+    { value: "Half", label: "The time to onboard a new partner, once every launch used the playbook" },
   ],
   profiles: [
     {
