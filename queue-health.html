@@ -31,19 +31,20 @@
       <span class="label">Enough people → Fast enough → Getting it right</span>
       <h2>Queue Health Monitor</h2>
       <p class="problem">
-        Leaders had plenty of data, but no single place to see how any team was actually doing. Our weekly business
-        review had grown to more than 70 slides that explained <em>what</em> happened but rarely <em>why</em>, or who
-        should act. I designed a single view that answers three questions leaders actually ask about every team:
-        do we have enough people, are we fast enough, and are we getting it right? Every red number sits next to its
-        likely cause and an owning team.
+        My team had to explain why 30-plus metrics moved across 70-plus workflows, every week. The context lived in a
+        dozen places: launches, experiments, bugs, known issues, longer trends. So we rebuilt the root cause by hand in a
+        shared spreadsheet, and it forgot everything we'd learned the week before. I built one view that puts every
+        metric next to its context, organized under three questions leaders actually ask: do we have enough people,
+        are we fast enough, and are we getting it right? Then I added AI scaffolding that drafts the first-pass root
+        cause from the documents my team already tracked, so the team validates instead of rewriting.
       </p>
       <p class="hint"><strong>Start here:</strong> read the real results below. Then click a team card to see its 8-week trend and what's behind the number.</p>
     </div>
     <div class="section-tag">Real results · the system I designed at Airbnb</div>
     <div class="stat-row qh-real">
-      <div class="stat-tile"><div class="value">70+ → 3</div><div class="label">A 70-plus slide weekly review replaced by three questions</div></div>
-      <div class="stat-tile"><div class="value">5 of 5</div><div class="label">Fraud &amp; Safety domains on the official tool, rebuilt by Analytics from my prototype</div></div>
-      <div class="stat-tile"><div class="value">Retired</div><div class="label">The old manual scorecard, once the tool became the source of truth</div></div>
+      <div class="stat-tile"><div class="value">~4 hrs</div><div class="label">Per person, every week, of manual root-cause writing replaced by AI first drafts my team validates</div></div>
+      <div class="stat-tile"><div class="value">5 of 5</div><div class="label">Fraud &amp; Safety domains on the official tool, which Analytics adopted from my prototype</div></div>
+      <div class="stat-tile"><div class="value">Automated</div><div class="label">Analytics now fills it automatically instead of pulling data into a spreadsheet by hand</div></div>
     </div>
 
     <div class="qh-questions">
