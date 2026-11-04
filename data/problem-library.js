@@ -4,7 +4,7 @@ const PROBLEM_LIBRARY = {
     { value: "1,360+", label: "Reports", caption: "Frontline feedback pulled from a dozen channels" },
     { value: "1,102", label: "Problems", caption: "Each report broken down to one broken step for one type of user" },
     { value: "46", label: "Clusters", caption: "Problems grouped by pattern, then scored on customer and business impact" },
-    { value: "94%", label: "Owned", caption: "Problems routed to a named owning team" },
+    { value: "91%", label: "Owned", caption: "Problems assigned a named owner" },
     { value: "20", label: "Fixes shipped", caption: "In about 3.5 months, for problems that had waited a median of 8.5 months" },
   ],
   ownershipProof: "Problems with a named owner shipped 46% of the time. Without one, 2%. It still runs today. Engineering now uses the library as one of its sources for a regular sprint of fixes.",
